@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/28629-500x.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/515deb5b82.js" crossorigin="anonymous"></script>
+    <title>Colton Alleyne-Davis | PGA Golf Professional</title>
+</head>
+<body>
+    <div class="home" style="display: none;"></div>
+
+    <div class="hero-container">
+        <div class="hero-shadow"></div>
+        <div class="hero-img-container">
+            <img src="images/hero/hero1.jpg" class="hero-img" />
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow"><span></span> Welcome to CAD Golf <span></span></div>
+            <div class="hero-title">Colton Alleyne-Davis<br> PGA Professional</div>
+            <div class="hero-para">Experience top-level coaching and custom events tailored by PGA Professional Colton Alleyne-Davis at Willingdon Golf Club.</div>
+            <div class="hero-btn-flex">
+                <div class="btn-hero btn-hero-learn">Learn more</div>
+                <a href="#events" class="btn-hero btn-hero-book">Book Event</a>
+            </div>
+        </div>
+
+        <div class="hero-radius"></div>
+    </div>
+
+    <div class="trust-container scroll-target">
+        <div class="trust-eyebrow"><span></span> Our Sponsorships <span></span></div>
+        <div class="trust-title">Trusted Sponsors</div>
+        <div class="trust-flex">
+            <img src="images/sponsor1.jpg" class="trust-img" />
+            <img src="images/sponsor2.jpg" class="trust-img" />
+            <img src="images/sponsor3.jpg" class="trust-img" />
+            <img src="images/sponsor4.jpg" class="trust-img" />
+            <img src="images/sponsor5.jpg" class="trust-img" />
+
+            <img src="images/sponsor1.jpg" class="trust-img" />
+            <img src="images/sponsor2.jpg" class="trust-img" />
+            <img src="images/sponsor3.jpg" class="trust-img" />
+            <img src="images/sponsor4.jpg" class="trust-img" />
+            <img src="images/sponsor5.jpg" class="trust-img" />
+
+            <img src="images/sponsor1.jpg" class="trust-img" />
+            <img src="images/sponsor2.jpg" class="trust-img" />
+            <img src="images/sponsor3.jpg" class="trust-img" />
+            <img src="images/sponsor4.jpg" class="trust-img" />
+            <img src="images/sponsor5.jpg" class="trust-img" />
+        </div>
+    </div>
+
+    <div id="events">
+        <div class="cal-container scroll-target">
+            <div class="cal-content">
+                <div class="cal-content-left">
+                    <div class="cal-eyebrow"><span></span> Our Events <span></span></div>
+                    <div class="cal-title">Explore Our<br> Event Calendar</div>
+                </div>
+                <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
+            </div>
+
+            <div class="cal-wrapper">
+                <div class="cal-nav">
+                    <i class="fa-solid fa-chevron-left cal-nav-chevron" onclick="changeMonth('left')"></i>
+                    <div class="cal-nav-title">August 2025</div>
+                    <i class="fa-solid fa-chevron-right cal-nav-chevron" onclick="changeMonth('right')"></i>
+                </div>
+
+                <div class="cal-top">
+                    <div class="cal-top-mon">Mon</div>
+                    <div class="cal-top-mon">Tue</div>
+                    <div class="cal-top-mon">Wed</div>
+                    <div class="cal-top-mon">Thu</div>
+                    <div class="cal-top-mon">Fri</div>
+                    <div class="cal-top-mon">Sat</div>
+                    <div class="cal-top-mon">Sun</div>
+                </div>
+                
+                <div class="cal-flex">
+                    <div class="cal-box cal-day-disabled" style="border-top: 0; border-left: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-top: 0; border-right: 0;"><div class="cal-box-day"></div></div>
+                </div>
+                <div class="cal-flex">
+                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-box-today"><div class="cal-box-day"></div>
+                        <div class="cal-today-txt">Today</div>
+                    </div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
+                        <div class="cal-event-head">Pro AM</div>
+                        <div class="cal-event-time">7:30am - 13:00am</div>
+                        <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
+                    </div>
+                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                </div>
+                <div class="cal-flex">
+                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div>
+                    </div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                </div>
+                <div class="cal-flex">
+                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
+                        <div class="cal-event-head">Open Singles</div>
+                        <div class="cal-event-time">8:30am - 14:00pm</div>
+                        <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
+                    </div>
+                    <div class="cal-box"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                </div>
+                <div class="cal-flex">
+                    <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                </div>
+                <div class="cal-flex last-flex">
+                    <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lac-container scroll-target">
+            <div class="cal-content">
+                <div class="cal-content-left">
+                    <div class="cal-eyebrow"><span></span> Our Events <span></span></div>
+                    <div class="cal-title">Explore Our<br> Event Calendar</div>
+                </div>
+                <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
+            </div>
+            
+            <div class="lac-wrapper">
+                <div class="lac-nav">
+                    <i class="fa-solid fa-chevron-left lac-nav-chevron" onclick="changeMonth('left')"></i>
+                    <div class="lac-nav-title">August 5, 2025</div>
+                    <i class="fa-solid fa-chevron-right lac-nav-chevron" onclick="changeMonth('right')"></i>
+                </div>
+
+                <div class="lac-scroll">
+                    <div class="lac-top">
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Mon</div>
+                        <div class="lac-top-mon">Tue</div>
+                        <div class="lac-top-mon">Wed</div>
+                        <div class="lac-top-mon">Thu</div>
+                        <div class="lac-top-mon">Fri</div>
+                        <div class="lac-top-mon">Sat</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Mon</div>
+                        <div class="lac-top-mon">Tue</div>
+                        <div class="lac-top-mon">Wed</div>
+                        <div class="lac-top-mon">Thu</div>
+                        <div class="lac-top-mon">Fri</div>
+                        <div class="lac-top-mon">Sat</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Mon</div>
+                        <div class="lac-top-mon">Tue</div>
+                        <div class="lac-top-mon">Wed</div>
+                        <div class="lac-top-mon">Thu</div>
+                        <div class="lac-top-mon">Fri</div>
+                        <div class="lac-top-mon">Sat</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Mon</div>
+                        <div class="lac-top-mon">Tue</div>
+                        <div class="lac-top-mon">Wed</div>
+                        <div class="lac-top-mon">Thu</div>
+                        <div class="lac-top-mon">Fri</div>
+                        <div class="lac-top-mon">Sat</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                        <div class="lac-top-mon">Sun</div>
+                    </div>
+                    
+                    <div class="lac-flex">
+                        <div class="lac-box lac-box-today lac-edge-left"><div class="lac-box-day">3</div>
+                            <div class="lac-today-txt">Today</div>
+                        </div>
+                        <div class="lac-box"><div class="lac-box-day">4</div></div>
+                        <div class="lac-box lac-box-event"><div class="lac-box-day">5</div>
+                            <div class="lac-event-head">Pro AM</div>
+                            <div class="lac-event-time">7:30am - 13:00pm</div>
+                            <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                        </div>
+                        <div class="lac-box"><div class="lac-box-day">6</div></div>
+                        <div class="lac-box"><div class="lac-box-day">7</div></div>
+                        <div class="lac-box lac-edge"><div class="lac-box-day">8</div></div>
+                        <div class="lac-box"><div class="lac-box-day">9</div></div>
+                        <div class="lac-box"><div class="lac-box-day">10</div></div>
+                        <div class="lac-box lac-box-event"><div class="lac-box-day">11</div>
+                            <div class="lac-event-head">Open Singles</div>
+                            <div class="lac-event-time">7:30am - 16:00pm</div>
+                            <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                        </div>
+                        <div class="lac-box"><div class="lac-box-day">12</div></div>
+                        <div class="lac-box"><div class="lac-box-day">13</div></div>
+                        <div class="lac-box"><div class="lac-box-day">14</div></div>
+                        <div class="lac-box"><div class="lac-box-day">15</div></div>
+                        <div class="lac-box"><div class="lac-box-day">16</div></div>
+                        <div class="lac-box"><div class="lac-box-day">17</div></div>
+                        <div class="lac-box"><div class="lac-box-day">18</div></div>
+                        <div class="lac-box"><div class="lac-box-day">19</div></div>
+                        <div class="lac-box"><div class="lac-box-day">20</div></div>
+                        <div class="lac-box"><div class="lac-box-day">21</div></div>
+                        <div class="lac-box"><div class="lac-box-day">22</div></div>
+                        <div class="lac-box"><div class="lac-box-day">23</div></div>
+                        <div class="lac-box"><div class="lac-box-day">24</div></div>
+                        <div class="lac-box"><div class="lac-box-day">25</div></div>
+                        <div class="lac-box"><div class="lac-box-day">26</div></div>
+                        <div class="lac-box"><div class="lac-box-day">27</div></div>
+                        <div class="lac-box"><div class="lac-box-day">28</div></div>
+                        <div class="lac-box"><div class="lac-box-day">29</div></div>
+                        <div class="lac-box"><div class="lac-box-day">30</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        REGISTER FORM:
+        name
+        email
+        phone
+        no. members
+        message
+    -->
+
+    <div class="info-modal">
+        <div class="info-wrapper">
+            <div class="info-top">
+                <div class="info-title">Event Information</div>
+                <i class="fa-solid fa-xmark info-xmark" onclick="closeInfoModal()"></i>
+                <div class="info-hr"></div>
+            </div>
+            <div class="info-flex">
+                <div class="info-col">
+                    <div class="info-label">Event Name</div>
+                    <div class="info-txt">Willingdon Open Singles</div>
+                </div>
+                <div class="info-col">
+                    <div class="info-label">Event Date</div>
+                    <div class="info-txt">August 9th, 2025</div>
+                </div>
+            </div>
+            <div class="info-flex">
+                <div class="info-col">
+                    <div class="info-label">Event Time</div>
+                    <div class="info-txt">8:30am - 14:00pm</div>
+                </div>
+                <div class="info-col">
+                    <div class="info-label">Event Location</div>
+                    <div class="info-txt">Willingdon Golf Club</div>
+                </div>
+            </div>
+            <div class="info-flex">
+                <div class="info-col">
+                    <div class="info-label">Event Cost</div>
+                    <div class="info-txt">£60</div>
+                </div>
+                <div class="info-col">
+                    <div class="info-label">Maximum Players</div>
+                    <div class="info-txt">10</div>
+                </div>
+            </div>
+            <div class="info-flex">
+                <div class="info-col">
+                    <div class="info-label">Description</div>
+                    <div class="info-txt">Join us at Willingdon Golf Club for the Open Singles event — a competitive yet welcoming day of individual stroke play on one of Eastbourne’s finest courses. Test your game, and enjoy the challenge!</div>
+                </div>
+            </div>
+            <div class="info-btn-flex">
+                <div class="btn-info btn-info-back" onclick="closeInfoModal()">Go Back</div>
+                <div class="btn-info btn-info-cta" onclick="closeInfoModal(); setTimeout(() => { openRegModal() }, 200);">Join Event</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reg-modal">
+        <div class="reg-wrapper">
+            <div class="info-top">
+                <div class="info-title">Event Information</div>
+                <i class="fa-solid fa-xmark info-xmark" onclick="closeRegModal()"></i>
+                <div class="info-hr"></div>
+            </div>
+            <form action="/api/submit" method="POST" class="info-form">
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Your name</div>
+                        <input type="text" placeholder="Your name" name="name" class="reg-input" />
+                    </div>
+                    <div class="info-col">
+                        <div class="reg-label">Your email</div>
+                        <input type="text" placeholder="Your email" name="email" class="reg-input" />
+                    </div>
+                </div>
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Phone number</div>
+                        <input type="text" placeholder="Phone number" name="phone" class="reg-input" />
+                    </div>
+                    <div class="info-col">
+                        <div class="reg-label">Total players</div>
+                        <div class="reg-selector" onclick="playerDropdown()">
+                            <div class="reg-selector-txt">1 Player</div>
+                            <i class="fa-solid fa-chevron-down reg-chev"></i>
+                            <div class="reg-dropdown">
+                                <div class="reg-option" data-set="1">1 Player</div>
+                                <div class="reg-option" data-set="2">2 Players</div>
+                                <div class="reg-option" data-set="3">3 Players</div>
+                                <div class="reg-option" data-set="4">4 Players</div>
+                            </div>
+                        </div>
+                        <div class="reg-error">Too many players for this event.</div>
+                        <input type="hidden" name="players" id="players" />
+                        <input type="hidden" name="event" id="event" />
+                    </div>
+                </div>
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Your message</div>
+                        <textarea name="message" placeholder="Type a message..." class="reg-area"></textarea>
+                    </div>
+                </div>
+                <div class="info-btn-flex">
+                    <div class="btn-reg btn-info-back" onclick="closeRegModal()">Cancel</div>
+                    <button type="submit" class="btn-reg btn-info-cta">Book Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="contact-container scroll-target" id="contact">
+        <div class="contact-left">
+            <div class="contact-eyebrow"><span></span> Our Events <span></span></div>
+            <div class="contact-title">Request Your<br> Next Trip</div>
+            <div class="contact-para">Plan your next golfing event with us. Provide your travel dates, location, and group size, and experience superb expert organization.</div>
+            <div class="contact-head">Our Email Address</div>
+            <div class="contact-email">colton.alleyne-davis@foremostgolf.com</div>
+            <div class="btn-contact-left">Get in touch <img src="images/arrow.png" class="contact-arrow" /></div>
+        </div>
+
+        <form class="contact-right" action="https://api.web3forms.com/submit" method="POST" data-redirect="#">
+            <input type="hidden" name="access_key" value="56c2a9ed-79ef-44df-8ef9-f1da4b5d68ce">
+
+            <div class="contact-flex">
+                <div class="contact-col">
+                    <div class="contact-label">First Name</div>
+                    <div class="contact-input-container">
+                        <i class="fa-solid fa-user contact-icon"></i>
+                        <input type="text" placeholder="First name..." name="first-name" class="contact-input" />
+                    </div>
+                </div>
+                <div class="contact-col">
+                    <div class="contact-label">Last Name</div>
+                    <div class="contact-input-container">
+                        <i class="fa-solid fa-user contact-icon"></i>
+                        <input type="text" placeholder="Last name..." name="last-name" class="contact-input" />
+                    </div>
+                </div>
+            </div>
+            <div class="contact-flex">
+                <div class="contact-col">
+                    <div class="contact-label">Email Address</div>
+                    <div class="contact-input-container">
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <input type="text" placeholder="Your email..." name="email" class="contact-input" />
+                    </div>
+                </div>
+                <div class="contact-col">
+                    <div class="contact-label">Phone Number</div>
+                    <div class="contact-input-container">
+                        <i class="fa-solid fa-phone contact-icon"></i>
+                        <input type="text" placeholder="Phone number..." name="phone" class="contact-input" />
+                    </div>
+                </div>
+            </div>
+            <div class="contact-col">
+                <div class="contact-label">Message</div>
+                <div class="contact-area-container">
+                    <i class="fa-solid fa-comment-dots contact-icon contact-area-icon"></i>    
+                    <textarea name="message" placeholder="Your message... (optional)" class="contact-area"></textarea>
+                </div>
+            </div>
+
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <button class="btn-contact" type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="book-modal">
+        <div class="book-wrapper">
+            <i class="fa-solid fa-check book-modal-check"></i>
+            <div class="book-modal-title">Thank You!</div>
+            <div class="book-modal-para">Your message has been sent<br> successfully. Thanks!</div>
+            <a href="index.html" class="btn-book-modal">Okay</a>
+        </div>
+    </div>
+    <div class="book-modal-form">
+        <div class="book-wrapper">
+            <i class="fa-solid fa-check book-modal-check"></i>
+            <div class="book-modal-title">Thank You!</div>
+            <div class="book-modal-para">Your booking has been successfully<br> created. Thanks!</div>
+            <a href="index.html" class="btn-book-modal">Okay</a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

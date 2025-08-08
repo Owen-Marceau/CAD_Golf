@@ -25,6 +25,7 @@ db.connect((err) => {
     console.log('Connected to MySQL database.');
 });
 
+/*
 const store = new MySQLStore({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -38,6 +39,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+*/
 
 app.use(express.static('public')); 
 

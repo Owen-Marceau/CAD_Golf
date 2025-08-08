@@ -1,6 +1,7 @@
 let menuOpen = false;
 let playerDropActive = false;
 
+let url = "https://cad-golf.onrender.com";
 let todayBox;
 let currentEvent;
 const months = [
@@ -253,7 +254,7 @@ document.querySelector(".info-form").addEventListener("submit", async (e) => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-        const res = await fetch("/api/submit", {
+        const res = await fetch(url + "/api/submit", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
@@ -291,7 +292,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
     async function getBookings(){
         const dataToSend = { month: monthIdx + 1, year: yearStr };
         try {
-            const response = await fetch('/api/get-events', {
+            const response = await fetch(url + '/api/get-events', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', 

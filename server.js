@@ -28,7 +28,7 @@ db.connect((err) => {
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://owen-developer.github.io', // exact GitHub Pages URL
+  origin: 'https://owen-marceau.github.io', // exact GitHub Pages URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));

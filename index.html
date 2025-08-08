@@ -20,7 +20,7 @@
         <div class="hero-content">
             <div class="hero-eyebrow"><span></span> Welcome to CAD Golf <span></span></div>
             <div class="hero-title">Colton Alleyne-Davis<br> PGA Professional</div>
-            <div class="hero-para">Experience top-level coaching and custom events tailored by PGA Professional Colton Alleyne-Davis at Willingdon Golf Club.</div>
+            <div class="hero-para">Experience premium golf events, trips, and Pro-Ams hosted by PGA Professional Colton Alleyne-Davis at Willingdon Golf Club.</div>
             <div class="hero-btn-flex">
                 <div class="btn-hero btn-hero-learn">Learn more</div>
                 <a href="#events" class="btn-hero btn-hero-book">Book Event</a>
@@ -290,7 +290,7 @@
             </div>
             <div class="info-flex">
                 <div class="info-col">
-                    <div class="info-label">Event Time</div>
+                    <div class="info-label">Latest Entry</div>
                     <div class="info-txt">8:30am - 14:00pm</div>
                 </div>
                 <div class="info-col">
@@ -304,13 +304,13 @@
                     <div class="info-txt">£60</div>
                 </div>
                 <div class="info-col">
-                    <div class="info-label">Maximum Players</div>
+                    <div class="info-label">Team Size</div>
                     <div class="info-txt">10</div>
                 </div>
             </div>
             <div class="info-flex">
                 <div class="info-col">
-                    <div class="info-label">Description</div>
+                    <div class="info-label">Event Details</div>
                     <div class="info-txt">Join us at Willingdon Golf Club for the Open Singles event — a competitive yet welcoming day of individual stroke play on one of Eastbourne’s finest courses. Test your game, and enjoy the challenge!</div>
                 </div>
             </div>
@@ -328,32 +328,17 @@
                 <i class="fa-solid fa-xmark info-xmark" onclick="closeRegModal()"></i>
                 <div class="info-hr"></div>
             </div>
-            <form action="/api/submit" method="POST" class="info-form">
+            <form class="info-form">
                 <div class="reg-flex">
                     <div class="info-col">
-                        <div class="reg-label">Your name</div>
-                        <input type="text" placeholder="Your name" name="name" class="reg-input" />
-                    </div>
-                    <div class="info-col">
-                        <div class="reg-label">Your email</div>
-                        <input type="text" placeholder="Your email" name="email" class="reg-input" />
-                    </div>
-                </div>
-                <div class="reg-flex">
-                    <div class="info-col">
-                        <div class="reg-label">Phone number</div>
-                        <input type="text" placeholder="Phone number" name="phone" class="reg-input" />
-                    </div>
-                    <div class="info-col">
-                        <div class="reg-label">Total players</div>
+                        <div class="reg-label">Your team</div>
                         <div class="reg-selector" onclick="playerDropdown()">
-                            <div class="reg-selector-txt">1 Player</div>
+                            <div class="reg-selector-txt">Player names</div>
                             <i class="fa-solid fa-chevron-down reg-chev"></i>
                             <div class="reg-dropdown">
-                                <div class="reg-option" data-set="1">1 Player</div>
-                                <div class="reg-option" data-set="2">2 Players</div>
-                                <div class="reg-option" data-set="3">3 Players</div>
-                                <div class="reg-option" data-set="4">4 Players</div>
+                                <input type="text" name="player1" placeholder="Player 1" class="reg-option-input" required />
+                                <input type="text" name="player2" placeholder="Player 2" class="reg-option-input" required />
+                                <input type="text" name="player3" placeholder="Player 3" class="reg-option-input reg-player3" required />
                             </div>
                         </div>
                         <div class="reg-error">Too many players for this event.</div>
@@ -363,11 +348,25 @@
                 </div>
                 <div class="reg-flex">
                     <div class="info-col">
-                        <div class="reg-label">Your message</div>
-                        <textarea name="message" placeholder="Type a message..." class="reg-area"></textarea>
+                        <div class="reg-label">Your name</div>
+                        <input type="text" placeholder="Your name" name="name" class="reg-input" required />
                     </div>
                 </div>
-                <div class="info-btn-flex">
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Your email</div>
+                        <input type="text" placeholder="Your email" name="email" class="reg-input" required />
+                    </div>
+                </div>
+                <!-- 
+                    <div class="reg-flex">
+                        <div class="info-col">
+                            <div class="reg-label">Phone number</div>
+                            <input type="text" placeholder="Phone number" name="phone" class="reg-input" />
+                        </div>
+                    </div>
+                    -->
+                <div class="info-btn-flex reg-bottom">
                     <div class="btn-reg btn-info-back" onclick="closeRegModal()">Cancel</div>
                     <button type="submit" class="btn-reg btn-info-cta">Book Event</button>
                 </div>
@@ -385,7 +384,7 @@
             <div class="btn-contact-left">Get in touch <img src="images/arrow.png" class="contact-arrow" /></div>
         </div>
 
-        <form class="contact-right" action="https://api.web3forms.com/submit" method="POST" data-redirect="#">
+        <form class="contact-right" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="56c2a9ed-79ef-44df-8ef9-f1da4b5d68ce">
 
             <div class="contact-flex">
@@ -393,14 +392,14 @@
                     <div class="contact-label">First Name</div>
                     <div class="contact-input-container">
                         <i class="fa-solid fa-user contact-icon"></i>
-                        <input type="text" placeholder="First name..." name="first-name" class="contact-input" />
+                        <input type="text" placeholder="First name..." name="first-name" class="contact-input" required />
                     </div>
                 </div>
                 <div class="contact-col">
                     <div class="contact-label">Last Name</div>
                     <div class="contact-input-container">
                         <i class="fa-solid fa-user contact-icon"></i>
-                        <input type="text" placeholder="Last name..." name="last-name" class="contact-input" />
+                        <input type="text" placeholder="Last name..." name="last-name" class="contact-input" required />
                     </div>
                 </div>
             </div>
@@ -409,14 +408,14 @@
                     <div class="contact-label">Email Address</div>
                     <div class="contact-input-container">
                         <i class="fa-solid fa-envelope contact-icon"></i>
-                        <input type="text" placeholder="Your email..." name="email" class="contact-input" />
+                        <input type="text" placeholder="Your email..." name="email" class="contact-input" required />
                     </div>
                 </div>
                 <div class="contact-col">
                     <div class="contact-label">Phone Number</div>
                     <div class="contact-input-container">
                         <i class="fa-solid fa-phone contact-icon"></i>
-                        <input type="text" placeholder="Phone number..." name="phone" class="contact-input" />
+                        <input type="text" placeholder="Phone number..." name="phone" class="contact-input" required />
                     </div>
                 </div>
             </div>

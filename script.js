@@ -119,6 +119,8 @@ function createHtml(){
         document.querySelectorAll(".header-link")[0].classList.add("header-link-active");
     } else if(document.querySelector(".about")){
         document.querySelectorAll(".header-link")[1].classList.add("header-link-active");
+    } else if(document.querySelector(".gallery")){
+        document.querySelectorAll(".header-link")[2].classList.add("header-link-active");
     }
 }
 createHtml();
@@ -206,6 +208,10 @@ function playerDropdown(){
         document.querySelector(".reg-dropdown").style.pointerEvents = "none";
         playerDropActive = false;
     }
+
+    document.querySelector(".reg-dropdown").addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
 
     document.addEventListener("click", (e) => {
         if(!document.querySelector(".reg-selector").contains(e.target) && document.querySelector(".reg-chev").style.transform == "rotate(-180deg)"){
@@ -326,31 +332,44 @@ function setCalendar(monthIdx, yearStr, firstCall){
                     bookings.forEach(booking => {
                         if(Number(booking.event_date.slice(8, 10)) == boxDay){
                             box.classList.add("cal-box-event");
-                            box.innerHTML += `
+                            let taken = "";
+                            if(booking.max_slots == booking.current_slots){
+                                taken = " (no spots left)";
+                            }
+                            if(taken == ""){
+                                box.innerHTML += `
                                 <div class="cal-event-head">${booking.title}</div>
-                                <div class="cal-event-time">${booking.event_time}</div>
-                                <div class="cal-event-cta">More info</div>
-                            `;
-                            box.querySelector(".cal-event-cta").addEventListener("click", () => {
-                                let taken = "";
-                                if(booking.max_slots == booking.current_slots){
-                                    taken = " (no spots left)";
-                                }
-                                openInfoModal();
-                                document.querySelectorAll(".info-txt")[0].textContent = booking.title;
-                                document.querySelectorAll(".info-txt")[1].textContent = booking.event_date.replace(/-/g, "/");
-                                document.querySelectorAll(".info-txt")[2].textContent = booking.event_time;
-                                document.querySelectorAll(".info-txt")[3].textContent = booking.location;
-                                document.querySelectorAll(".info-txt")[4].textContent = booking.cost;
-                                document.querySelectorAll(".info-txt")[5].textContent = booking.max_slots + taken;
-                                document.querySelectorAll(".info-txt")[6].textContent = booking.event_description;
-                                document.getElementById("event").value = JSON.stringify(booking);
-                                if(taken == ""){
-                                    document.querySelector("div.btn-info-cta").classList.remove("btn-inactive");
-                                } else {
-                                    document.querySelector("div.btn-info-cta").classList.add("btn-inactive");
-                                }
-                            });
+                                <div class="cal-event-cta">BOOK NOW</div>
+                                `;
+                                box.querySelector(".cal-event-cta").addEventListener("click", () => {
+                                    if(booking.team_size == "2"){
+                                        document.querySelector(".reg-player3").style.display = "none";
+                                        document.querySelector(".reg-player3").removeAttribute('required');
+                                    } else {
+                                        document.querySelector(".reg-player3").style.display = "flex";
+                                        document.querySelector(".reg-player3").setAttribute('required', '');
+                                    }
+                                    openInfoModal();
+                                    document.querySelectorAll(".info-txt")[0].textContent = booking.title;
+                                    document.querySelectorAll(".info-txt")[1].textContent = booking.event_date.replace(/-/g, "/");
+                                    document.querySelectorAll(".info-txt")[2].textContent = booking.latest_entry.replace(/-/g, "/");
+                                    document.querySelectorAll(".info-txt")[3].textContent = booking.location;
+                                    document.querySelectorAll(".info-txt")[4].textContent = booking.cost;
+                                    document.querySelectorAll(".info-txt")[5].textContent = booking.team_size;
+                                    document.querySelectorAll(".info-txt")[6].textContent = booking.event_description;
+                                    document.getElementById("event").value = JSON.stringify(booking);
+                                    if(taken == ""){
+                                        document.querySelector("div.btn-info-cta").classList.remove("btn-inactive");
+                                    } else {
+                                        document.querySelector("div.btn-info-cta").classList.add("btn-inactive");
+                                    }
+                                });
+                            } else {
+                                box.innerHTML += `
+                                <div class="cal-event-head">${booking.title}</div>
+                                <div class="cal-event-time">(No spots left)</div>
+                                `;
+                            }
                         }
                     });
                 } else {
@@ -378,31 +397,44 @@ function setCalendar(monthIdx, yearStr, firstCall){
                     bookings.forEach(booking => {
                         if(Number(booking.event_date.slice(8, 10)) == boxDay){
                             box.classList.add("lac-box-event");
-                            box.innerHTML += `
+                            let taken = "";
+                            if(booking.max_slots == booking.current_slots){
+                                taken = " (no spots left)";
+                            }
+                            if(taken == ""){
+                                box.innerHTML += `
                                 <div class="lac-event-head">${booking.title}</div>
-                                <div class="lac-event-time">${booking.event_time}</div>
-                                <div class="lac-event-cta">More info</div>
-                            `;
-                            box.querySelector(".lac-event-cta").addEventListener("click", () => {
-                                let taken = "";
-                                if(booking.max_slots == booking.current_slots){
-                                    taken = " (no spots left)";
-                                }
-                                openInfoModal();
-                                document.querySelectorAll(".info-txt")[0].textContent = booking.title;
-                                document.querySelectorAll(".info-txt")[1].textContent = booking.event_date.replace(/-/g, "/");
-                                document.querySelectorAll(".info-txt")[2].textContent = booking.event_time;
-                                document.querySelectorAll(".info-txt")[3].textContent = booking.location;
-                                document.querySelectorAll(".info-txt")[4].textContent = booking.cost;
-                                document.querySelectorAll(".info-txt")[5].textContent = booking.max_slots + taken;
-                                document.querySelectorAll(".info-txt")[6].textContent = booking.event_description;
-                                document.getElementById("event").value = JSON.stringify(booking);
-                                if(taken == ""){
-                                    document.querySelector("div.btn-info-cta").classList.remove("btn-inactive");
-                                } else {
-                                    document.querySelector("div.btn-info-cta").classList.add("btn-inactive");
-                                }
-                            });
+                                <div class="lac-event-cta">BOOK NOW</div>
+                                `;
+                                box.querySelector(".lac-event-cta").addEventListener("click", () => {
+                                    if(booking.team_size == "2"){
+                                        document.querySelector(".reg-player3").style.display = "none";
+                                        document.querySelector(".reg-player3").removeAttribute('required');
+                                    } else {
+                                        document.querySelector(".reg-player3").style.display = "flex";
+                                        document.querySelector(".reg-player3").setAttribute('required', '');
+                                    }
+                                    openInfoModal();
+                                    document.querySelectorAll(".info-txt")[0].textContent = booking.title;
+                                    document.querySelectorAll(".info-txt")[1].textContent = booking.event_date.replace(/-/g, "/");
+                                    document.querySelectorAll(".info-txt")[2].textContent = booking.latest_entry.replace(/-/g, "/");
+                                    document.querySelectorAll(".info-txt")[3].textContent = booking.location;
+                                    document.querySelectorAll(".info-txt")[4].textContent = booking.cost;
+                                    document.querySelectorAll(".info-txt")[5].textContent = booking.team_size;
+                                    document.querySelectorAll(".info-txt")[6].textContent = booking.event_description;
+                                    document.getElementById("event").value = JSON.stringify(booking);
+                                    if(taken == ""){
+                                        document.querySelector("div.btn-info-cta").classList.remove("btn-inactive");
+                                    } else {
+                                        document.querySelector("div.btn-info-cta").classList.add("btn-inactive");
+                                    }
+                                });    
+                            } else {
+                                box.innerHTML += `
+                                <div class="lac-event-head">${booking.title}</div>
+                                <div class="lac-event-time">(No spots left)</div>
+                                `;
+                            }
                         }
                     });
                 } else {

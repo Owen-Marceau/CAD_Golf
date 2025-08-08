@@ -26,6 +26,7 @@ db.connect((err) => {
 });
 
 const cors = require('cors');
+const e = require('express');
 
 app.use(cors({
   origin: 'https://owen-marceau.github.io', // exact GitHub Pages URL
@@ -60,13 +61,13 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     }
 });
-function sendClientNotification(event, name, phone, players){
+function sendClientNotification(event, name, players, email){
     const mailOptions = {
         from: process.env.EMAIL_USER,  // Sender address
         to: "jackbaileywoods@gmail.com",                 // Receiver's email
         subject: 'New Booking', // Subject line
-        html: `<p>Hi, a new booking was made from your website.<br><br>Event: ${event}<br><br>Player name: ${name}<br><br> Phone Number: ${phone}<br><br> Total Players: ${players}</p>`,
-        text: `Hi, a new booking was made from your website.\n\nEvent: ${event}\n\nPlayer name: ${name}\n\n Phone Number: ${phone}\n\n Total Players: ${players}`,
+        html: `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`,
+        text: `Hi, a new booking was made from your website by ${name}.\n\nEvent: ${event}\n\nPlayers: ${players.replace(/,,/g, ", ")}\n\n Email: ${email}`,
     };
   
     // Send mail
@@ -85,16 +86,12 @@ function isValidEmail(email){
 ///////////////////////////////////////////////////////////////////////////////
 
 
-
 ////////////////////////// APIS ROUTES //////////////////////////
 app.post("/api/submit", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
-    const phone = req.body.phone;
-    const players = req.body.players;
-    const message = req.body.message;
+    const team = req.body.player1 + ",," + req.body.player2 + ",," + req.body.player3;
     const event = JSON.parse(req.body.event);
-
     const getEventQuery = "select * from all_events where id = ?";
     db.query(getEventQuery, [event.id], (err, result) => {
         if(err){
@@ -102,29 +99,28 @@ app.post("/api/submit", (req, res) => {
         }
 
         if(result.length > 0){
-            if((Number(players) + event.current_slots) > event.max_slots){
+            if(event.current_slots + Number(event.team_size) > event.max_slots){
                 return res.json({ message: 'Limit Exceeded' });
-            } else {
-                const insertQuery = "insert into bookings (event_id, booking_name, email, phone_number, message, total_players) values (?, ?, ?, ?, ?, ?);";
-                db.query(insertQuery, [event.id, name, email, phone, message, players], (err, result) => {
+            }
+            const insertQuery = "insert into bookings (event_id, booking_name, email, team) values (?, ?, ?, ?);";
+            db.query(insertQuery, [event.id, name, email, team], (err, result) => {
+                if(err){
+                    console.error("Error inserting booking: " + err);
+                    return res.json({ message: 'Failure in DB' });
+                }
+
+                const updateSlotsQuery = "update all_events set current_slots = ? where id = ?";
+                db.query(updateSlotsQuery, [event.current_slots + Number(event.team_size), event.id], (err, result) => {
                     if(err){
-                        console.error("Error inserting booking: " + err);
-                        return res.json({ message: 'Failure in DB' });
+                        console.error("Error updating slots: " + err);
+                        return res.json({ message: 'Failure in DB (slots)' });
                     }
 
-                    const updateSlotsQuery = "update all_events set current_slots = ? where id = ?";
-                    db.query(updateSlotsQuery, [event.current_slots + Number(players), event.id], (err, result) => {
-                        if(err){
-                            console.error("Error updating slots: " + err);
-                            return res.json({ message: 'Failure in DB (slots)' });
-                        }
 
-
-                        sendClientNotification(event.title, name, phone, players);
-                        return res.json({ message: "Success" });
-                    });
+                    sendClientNotification(event.title, name, team, email);
+                    return res.json({ message: "Success" });
                 });
-            }
+            });
         } else {
             return res.json({ message: 'Failure' });
         }

@@ -25,6 +25,14 @@ db.connect((err) => {
     console.log('Connected to MySQL database.');
 });
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://owen-developer.github.io', // exact GitHub Pages URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
+
 /*
 const store = new MySQLStore({
     host: process.env.DB_HOST,

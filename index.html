@@ -324,11 +324,29 @@
     <div class="reg-modal">
         <div class="reg-wrapper">
             <div class="info-top">
-                <div class="info-title">Event Information</div>
+                <div class="info-title">Create Booking</div>
                 <i class="fa-solid fa-xmark info-xmark" onclick="closeRegModal()"></i>
                 <div class="info-hr"></div>
             </div>
             <form class="info-form">
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Your name</div>
+                        <input type="text" placeholder="Your name" name="name" class="reg-input" required />
+                    </div>
+                </div>
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Your email</div>
+                        <input type="text" placeholder="Your email" name="email" class="reg-input" required />
+                    </div>
+                </div>
+                <div class="reg-flex">
+                    <div class="info-col">
+                        <div class="reg-label">Phone number</div>
+                        <input type="text" placeholder="Phone number" name="phone" class="reg-input" required />
+                    </div>
+                </div>
                 <div class="reg-flex">
                     <div class="info-col">
                         <div class="reg-label">Your team</div>
@@ -344,18 +362,6 @@
                         <div class="reg-error">Too many players for this event.</div>
                         <input type="hidden" name="players" id="players" />
                         <input type="hidden" name="event" id="event" />
-                    </div>
-                </div>
-                <div class="reg-flex">
-                    <div class="info-col">
-                        <div class="reg-label">Your name</div>
-                        <input type="text" placeholder="Your name" name="name" class="reg-input" required />
-                    </div>
-                </div>
-                <div class="reg-flex">
-                    <div class="info-col">
-                        <div class="reg-label">Your email</div>
-                        <input type="text" placeholder="Your email" name="email" class="reg-input" required />
                     </div>
                 </div>
                 <!-- 
@@ -378,7 +384,7 @@
         <div class="contact-left">
             <div class="contact-eyebrow"><span></span> Our Events <span></span></div>
             <div class="contact-title">Request Your<br> Next Trip</div>
-            <div class="contact-para">Plan your next golfing event with us. Provide your travel dates, location, and group size, and experience superb expert organization.</div>
+            <div class="contact-para">We want to hear from you! Tell us where you’d love our next golf trip to be and we’ll make it happen. Fill out the form and share your dream destination today!</div>
             <div class="contact-head">Our Email Address</div>
             <div class="contact-email">colton.alleyne-davis@foremostgolf.com</div>
             <div class="btn-contact-left">Get in touch <img src="images/arrow.png" class="contact-arrow" /></div>
@@ -423,7 +429,7 @@
                 <div class="contact-label">Message</div>
                 <div class="contact-area-container">
                     <i class="fa-solid fa-comment-dots contact-icon contact-area-icon"></i>    
-                    <textarea name="message" placeholder="Your message... (optional)" class="contact-area"></textarea>
+                    <textarea name="message" placeholder="Where to next?" class="contact-area"></textarea>
                 </div>
             </div>
 

@@ -90,6 +90,7 @@ function isValidEmail(email){
 app.post("/api/submit", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
+    const phone = req.body.phone;
     const team = req.body.player1 + ",," + req.body.player2 + ",," + req.body.player3;
     const event = JSON.parse(req.body.event);
     const getEventQuery = "select * from all_events where id = ?";
@@ -102,8 +103,8 @@ app.post("/api/submit", (req, res) => {
             if(event.current_slots + Number(event.team_size) > event.max_slots){
                 return res.json({ message: 'Limit Exceeded' });
             }
-            const insertQuery = "insert into bookings (event_id, booking_name, email, team) values (?, ?, ?, ?);";
-            db.query(insertQuery, [event.id, name, email, team], (err, result) => {
+            const insertQuery = "insert into bookings (event_id, booking_name, email, phone, team) values (?, ?, ?, ?, ?);";
+            db.query(insertQuery, [event.id, name, email, phone, team], (err, result) => {
                 if(err){
                     console.error("Error inserting booking: " + err);
                     return res.json({ message: 'Failure in DB' });

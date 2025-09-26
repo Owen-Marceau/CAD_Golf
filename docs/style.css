@@ -443,10 +443,10 @@ body {
     border-radius: 8px;
     padding: 28px 24px 24px;
     max-width: calc(100% - 18px);
-    width: 750px;
+    width: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     position: relative;
 }
 .info-top {
@@ -468,7 +468,7 @@ body {
    transform: translateX(-50%); 
 }
 .info-title {
-    font-size: 24px;
+    font-size: 26px;
     color: hsl(0, 0%, 20%);
     font-weight: 500;
     line-height: 1;
@@ -486,19 +486,20 @@ body {
 }
 .info-col {
     width: 100%;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 .info-label {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     color: hsl(0, 0%, 20%);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
 }
 .info-txt {
-    font-size: 16px;
+    font-size: 18px;
     color: hsl(0, 0%, 40%);
 }
 .info-btn-flex {
+    margin-top: 45px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -551,7 +552,7 @@ body {
     border-radius: 8px;
     padding: 28px 24px 24px;
     max-width: calc(100% - 18px);
-    width: 750px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -567,12 +568,12 @@ body {
     margin-bottom: 6px;
     color: hsl(0, 0%, 20%);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
 }
 .reg-input {
     background-color: transparent;
     outline: 0;
-    font-size: 16px;
+    font-size: 17px;
     padding: 10px 15px;
     color: hsl(0, 0%, 20%);
     border: 1px solid hsl(0, 0%, 85%);
@@ -610,7 +611,7 @@ body {
     box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
     background-color: white;
     position: absolute;
-    top: 52px;
+    bottom: 52px;
     left: -1px;
     width: calc(100% + 2px);
     border-radius: 5px;
@@ -668,9 +669,6 @@ body {
 .btn-inactive {
     pointer-events: none;
     opacity: 0.4;
-}
-.reg-bottom {
-    margin-top: 30px;
 }
 /*//////////////////////////////////////////////////////////////////*/
 
@@ -1163,7 +1161,7 @@ a.foot-link:hover {
 .about-title {
     margin-top: 10px;
     font-size: 72px;
-    line-height: 1.2;
+    line-height: 1.05;
     font-weight: 600;
     color: hsl(0, 0%, 20%);
 }
@@ -1174,8 +1172,15 @@ a.foot-link:hover {
     line-height: 1.75;
     color: hsl(0, 0%, 30%);
 }
-.about-flex {
+.about-feat {
     margin: 36px 0;
+    display: flex;
+    flex-direction: column;
+}
+.hr-other {
+    display: none;
+}
+.about-flex {
     width: 700px;
     display: flex;
     justify-content: space-between;
@@ -1200,7 +1205,7 @@ a.foot-link:hover {
 .about-txt {
     margin-top: 10px;
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.4;
     color: hsl(0, 0%, 30%);
 }
 .about-hr {
@@ -1848,6 +1853,12 @@ span.review-star-txt {
         width: 100%;
         height: 1px;
     }
+    .hr-other {
+        display: block;
+    }
+    .about-feat {
+        gap: 28px;
+    }
     .about-section {
         gap: 28px;
     }
@@ -1863,7 +1874,7 @@ span.review-star-txt {
     }
 }
 @media only screen and (max-width: 700px){
-    .header-flex, .lac-container, .contact-container, .trust-container, .banner-content .about-container, .gal-container, .review-container {
+    .header-flex, .lac-container, .contact-container, .trust-container, .banner-content, .about-container, .gal-container, .review-container {
         max-width: calc(100% - 25px);
     }
 
@@ -1922,10 +1933,14 @@ span.review-star-txt {
     .info-col {
         margin-bottom: 18px;
     }
+    .info-label, .reg-label {
+        font-size: 15px;
+    }
     .info-txt, .reg-selector-txt {
         font-size: 14px;
     }
     .info-btn-flex {
+        margin-top: 0;
         justify-content: flex-start;
     }
     .btn-info {
@@ -2017,9 +2032,10 @@ span.review-star-txt {
         max-width: 100%;
     }
     .banner-title {
-        font-size: 50px;
+        font-size: 42px;
     }
     .about-container {
+        width: 100%;
         margin: 80px auto 100px;
     }
 

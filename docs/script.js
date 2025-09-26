@@ -1,7 +1,7 @@
 let menuOpen = false;
 let playerDropActive = false;
 
-let url = "https://cad-golf.onrender.com"; // https://cad-golf.onrender.com
+let url = ""; // https://cad-golf.onrender.com
 let todayBox;
 let currentEvent;
 const months = [
@@ -24,7 +24,7 @@ function createHtml(){
     menu.classList.add("menu-container");
     menu.innerHTML = `
         <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
-        <a href="about.html"><div class="menu-section menu-dark">About us</div></a>
+        <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
         <a href="index.html#contact"><div class="menu-section">Contact us</div></a>

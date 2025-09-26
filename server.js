@@ -50,7 +50,7 @@ app.use(session({
 }));
 */
 
-app.use(express.static('public')); 
+app.use(express.static('docs')); 
 
 
 ////////////////////////// REUSABLE FUNCTIONS LOGIC ///////////////////////////
@@ -83,7 +83,6 @@ function isValidEmail(email){
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	return emailRegex.test(email);
 }
-///////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////// APIS ROUTES //////////////////////////
@@ -146,7 +145,6 @@ app.post("/api/get-events", (req, res) => {
         return res.json({ bookings: result });
     });
 });
-/////////////////////////////////////////////////////////////////
 
 
 

@@ -27,7 +27,7 @@ function createHtml(){
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
-        <a href="index.html#contact"><div class="menu-section">Contact us</div></a>
+        <a href="index.html#contact"><div class="menu-section">Contact Me</div></a>
     `
 
     let header = document.createElement("div");
@@ -40,10 +40,10 @@ function createHtml(){
 
             <div class="header-nav">
                 <a href="index.html" class="header-link">Home</a>
-                <a href="about.html" class="header-link">About us</a>
+                <a href="about.html" class="header-link">About Me</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
                 <a href="index.html#events" class="header-link">View events</a>
-                <a href="index.html#contact" class="header-link">Contact us</a>
+                <a href="index.html#contact" class="header-link">Contact me</a>
             </div>
 
             <a href="index.html#events" class="btn-header">Book Now</a>
@@ -84,17 +84,17 @@ function createHtml(){
                 <div class="foot-nav">
                     <div class="foot-ul">
                         <div class="foot-label">Navigation</div>
-                        <a href="about-us.html" class="foot-link">About us</a>
+                        <a href="about-us.html" class="foot-link">About Me</a>
                         <a href="about.html" class="foot-link">Gallery</a>
                         <a href="index.html#events" class="foot-link">Book event</a>
-                        <a href="index.html#contact" class="foot-link">Contact us</a>
+                        <a href="index.html#contact" class="foot-link">Contact Me</a>
                     </div>
                     <div class="foot-ul">
                         <div class="foot-label">Get in Touch</div>
                         <a href="https://www.instagram.com/cadgolf90" target="_blank" class="foot-link">Instagram</a>
                         <a href="https://www.facebook.com/coltonio/" target="_blank" class="foot-link">Facebook</a>
-                        <a href="mailto:colton.alleyne-davis@foremostgolf.com" target="_blank" class="foot-link">Email us</a>
-                        <a href="tel:+4401323410981" target="_blank" class="foot-link">Call us</a>
+                        <a href="mailto:colton.alleyne-davis@foremostgolf.com" target="_blank" class="foot-link">Email me</a>
+                        <a href="tel:+4401323410981" target="_blank" class="foot-link">Call me</a>
                     </div>
                     <div class="foot-ul">
                         <div class="foot-label">Our Location</div>

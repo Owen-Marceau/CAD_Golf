@@ -54,30 +54,28 @@ app.use(express.static('docs'));
 
 
 ////////////////////////// REUSABLE FUNCTIONS LOGIC ///////////////////////////
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER, 
-        pass: process.env.EMAIL_PASS
-    }
-});
-function sendClientNotification(event, name, players, email){
-    const mailOptions = {
-        from: process.env.EMAIL_USER,  // Sender address
-        to: "jackbaileywoods@gmail.com",                 // Receiver's email
-        subject: 'New Booking', // Subject line
-        html: `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`,
-        text: `Hi, a new booking was made from your website by ${name}.\n\nEvent: ${event}\n\nPlayers: ${players.replace(/,,/g, ", ")}\n\n Email: ${email}`,
-    };
-  
-    // Send mail
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log('Error sending email:', error);
-        } else {
-            console.log('Verification email sent:', info.response);
+async function sendEmail(userEmail, text) {
+    const dataToSend = { reciever: userEmail, text: text, service: 'nextdesign' };
+    try {
+        const response = await fetch('https://email-sender-lkex.vercel.app/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.error);
+            return;
         }
-    });
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+function sendClientNotification(event, name, players, email){
+    sendEmail("jackbaileywoods@gmail.com", `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`)
 }
 function isValidEmail(email){
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

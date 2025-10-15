@@ -73,7 +73,7 @@ function createHtml(){
                         <a href="https://www.facebook.com/coltonio/" target="_blank">
                             <i class="fa-brands fa-facebook-f foot-social-icon"></i>
                         </a>
-                        <a href="mailto:colton.alleyne-davis@foremostgolf.com" target="_blank">
+                        <a href="mailto:colton@cadgolfperformance.com" target="_blank">
                             <i class="fa-solid fa-envelope foot-social-icon"></i>
                         </a>
                         <a href="tel:+4401323410981" target="_blank">
@@ -93,7 +93,7 @@ function createHtml(){
                         <div class="foot-label">Get in Touch</div>
                         <a href="https://www.instagram.com/cadgolf90" target="_blank" class="foot-link">Instagram</a>
                         <a href="https://www.facebook.com/coltonio/" target="_blank" class="foot-link">Facebook</a>
-                        <a href="mailto:colton.alleyne-davis@foremostgolf.com" target="_blank" class="foot-link">Email me</a>
+                        <a href="mailto:colton@cadgolfperformance.com" target="_blank" class="foot-link">Email me</a>
                         <a href="tel:+4401323410981" target="_blank" class="foot-link">Call me</a>
                     </div>
                     <div class="foot-ul">

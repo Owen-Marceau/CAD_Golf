@@ -75,7 +75,7 @@ async function sendEmail(userEmail, text) {
     }
 }
 function sendClientNotification(event, name, players, email){
-    sendEmail("jackbaileywoods@gmail.com", `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`)
+    sendEmail(process.env.ADMIN_EMAIL, `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`)
 }
 function isValidEmail(email){
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -43,7 +43,7 @@ function createHtml(){
                 <a href="about.html" class="header-link">About Me</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
                 <a href="index.html#events" class="header-link">View events</a>
-                <a href="index.html#contact" class="header-link">Contact me</a>
+                <a href="lessons-and-fittings.html" class="header-link">Lessons & Fitting</a>
             </div>
 
             <a href="index.html#events" class="btn-header">Book Now</a>
@@ -121,6 +121,8 @@ function createHtml(){
         document.querySelectorAll(".header-link")[1].classList.add("header-link-active");
     } else if(document.querySelector(".gallery")){
         document.querySelectorAll(".header-link")[2].classList.add("header-link-active");
+    } else if(document.querySelector(".lessons")){
+        document.querySelectorAll(".header-link")[4].classList.add("header-link-active");
     }
 }
 createHtml();
@@ -230,60 +232,64 @@ document.querySelectorAll(".reg-option").forEach(option => {
     });
 });
 
-if(document.querySelector(".contact-container")){
-    document.querySelector(".contact-right").addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        const form = e.target;
-        const formData = new FormData(form);
-
-        const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
+if(document.querySelector("form")){
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+    
+            const form = e.target;
+            const formData = new FormData(form);
+    
+            const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+            });
+    
+            const result = await response.json();
+    
+            if (result.success) {
+                document.querySelector(".book-modal").style.opacity = "1";
+                document.querySelector(".book-modal").style.pointerEvents = "auto";
+            }
+    
+            form.reset(); // Optional: reset form fields
         });
-
-        const result = await response.json();
-
-        if (result.success) {
-            document.querySelector(".book-modal").style.opacity = "1";
-            document.querySelector(".book-modal").style.pointerEvents = "auto";
-        }
-
-        form.reset(); // Optional: reset form fields
     });
 }
 
-document.querySelector(".info-form").addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop page reload
-
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-        const res = await fetch(url + "/api/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-
-        const result = await res.json();
-        if(result.message == "Success"){
-            closeRegModal();
-            setTimeout(() => {
-                document.querySelector(".book-modal-form").style.opacity = "1";
-                document.querySelector(".book-modal-form").style.pointerEvents = "auto";
-            }, 200);
-        } else if(result.message == "Limit Exceeded"){
-            document.querySelector(".reg-error").style.display = "block";
-            setTimeout(() => {
-                document.querySelector(".reg-error").style.display = "none";
-            }, 2000);
+if(document.querySelector(".info-form")){
+    document.querySelector(".info-form").addEventListener("submit", async (e) => {
+        e.preventDefault(); // stop page reload
+    
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+    
+        try {
+            const res = await fetch(url + "/api/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+    
+            const result = await res.json();
+            if(result.message == "Success"){
+                closeRegModal();
+                setTimeout(() => {
+                    document.querySelector(".book-modal-form").style.opacity = "1";
+                    document.querySelector(".book-modal-form").style.pointerEvents = "auto";
+                }, 200);
+            } else if(result.message == "Limit Exceeded"){
+                document.querySelector(".reg-error").style.display = "block";
+                setTimeout(() => {
+                    document.querySelector(".reg-error").style.display = "none";
+                }, 2000);
+            }
+    
+        } catch (err) {
+            console.error("Error submitting form:", err);
         }
-
-    } catch (err) {
-        console.error("Error submitting form:", err);
-    }
-});
+    });
+}
 
 
 

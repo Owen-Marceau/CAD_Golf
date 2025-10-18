@@ -181,58 +181,61 @@
         </div>
     </div>
 
-    <div class="contact-container scroll-target">
-        <div class="contact-left">
-            <div class="contact-eyebrow"><span></span> Get in Touch <span></span></div>
-            <div class="contact-title">Request Your<br> Next Trip</div>
-            <div class="contact-para">I'd love to hear from you! Tell me where you’d love our next golf trip to be and we’ll make it happen. Fill out the form and share your dream destination today!</div>
-            <div class="contact-head">My Email Address</div>
-            <div class="contact-email">colton@cadgolfperformance.com</div>
-            <div class="btn-contact-left">Get in touch <img src="images/arrow.png" class="contact-arrow" /></div>
+    <div class="con-bg" id="contact">
+        <div class="con-container" style="margin-top: 0;">
+            <div class="serv-eyebrow scroll-target"><span></span> Contact Now <span></span></div>
+            <div class="con-title scroll-target">Get in Touch</div>
+            <div class="con-para scroll-target">Whether you have a question, need support, or just want to chat, reach out to me anytime.</div>
+    
+            <div class="con-flex scroll-target">
+                <div class="con-left">
+                    <div class="con-info">
+                        <div class="con-info-head">Get in Touch</div>
+                        <div class="con-info-txt">Send me a message or talk to me over phone.</div>
+                        <div class="con-info-flex">
+                            <div class="con-info-col">
+                                <div class="con-info-label">Email</div>
+                                <a href="mailto:colton@cadgolfperformance.com" class="con-info-txt">colton@cadgolfperformance.com</a>
+                            </div>
+                            <div class="con-info-col">
+                                <div class="con-info-label">Phone</div>
+                                <a href="tel:+4401323410981" class="con-info-txt">(+44) 01323410981</a>
+                            </div>
+                        </div>
+                        <div class="con-info-col">
+                            <div class="con-info-label">Follow Us</div>
+                            <div class="con-social">
+                            <a href="https://www.instagram.com/cadgolf90" target="_blank">
+                            <i class="fa-brands fa-instagram foot-con-icon"></i>
+                            </a>
+                            <a href="https://www.facebook.com/coltonio/" target="_blank">
+                                <i class="fa-brands fa-facebook-f foot-con-icon"></i>
+                            </a>
+                            <a href="mailto:colton@cadgolfperformance.com" target="_blank">
+                                <i class="fa-solid fa-envelope foot-con-icon"></i>
+                            </a>
+                            <a href="tel:+4401323410981" target="_blank">
+                                <i class="fa-solid fa-phone foot-con-icon"></i>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="con-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.3048681234454!2d0.2503932768450917!3d50.78845836296861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df716c89c0233f%3A0x6e571c2522adfdf6!2sWillingdon%20Golf%20Club!5e0!3m2!1sen!2sie!4v1760785062203!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <form class="con-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="56c2a9ed-79ef-44df-8ef9-f1da4b5d68ce" />
+                    <div class="con-label">Full Name</div>
+                    <input type="text" placeholder="Enter your name" class="con-input">
+                    <div class="con-label">Email Address</div>
+                    <input type="text" placeholder="Enter your email" class="con-input">
+                    <div class="con-label">Subject</div>
+                    <input type="text" placeholder="Subject" class="con-input">
+                    <div class="con-label">Message</div>
+                    <textarea name="message" placeholder="Enter your message" class="con-area"></textarea>
+                    <button class="btn-con btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
         </div>
-
-        <form class="contact-right">
-            <div class="contact-flex">
-                <div class="contact-col">
-                    <div class="contact-label">First Name</div>
-                    <div class="contact-input-container">
-                        <i class="fa-solid fa-user contact-icon"></i>
-                        <input type="text" placeholder="First name..." name="first-name" class="contact-input" />
-                    </div>
-                </div>
-                <div class="contact-col">
-                    <div class="contact-label">Last Name</div>
-                    <div class="contact-input-container">
-                        <i class="fa-solid fa-user contact-icon"></i>
-                        <input type="text" placeholder="Last name..." name="last-name" class="contact-input" />
-                    </div>
-                </div>
-            </div>
-            <div class="contact-flex">
-                <div class="contact-col">
-                    <div class="contact-label">Email Address</div>
-                    <div class="contact-input-container">
-                        <i class="fa-solid fa-envelope contact-icon"></i>
-                        <input type="text" placeholder="Your email..." name="email" class="contact-input" />
-                    </div>
-                </div>
-                <div class="contact-col">
-                    <div class="contact-label">Phone Number</div>
-                    <div class="contact-input-container">
-                        <i class="fa-solid fa-phone contact-icon"></i>
-                        <input type="text" placeholder="Phone number..." name="phone" class="contact-input" />
-                    </div>
-                </div>
-            </div>
-            <div class="contact-col">
-                <div class="contact-label">Message</div>
-                <div class="contact-area-container">
-                    <i class="fa-solid fa-comment-dots contact-icon contact-area-icon"></i>    
-                    <textarea name="message" placeholder="Your message... (optional)" class="contact-area"></textarea>
-                </div>
-            </div>
-            <button class="btn-contact" type="submit">Send Message</button>
-        </form>
     </div>
 
 

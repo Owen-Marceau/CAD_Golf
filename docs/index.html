@@ -14,7 +14,7 @@
     <div class="hero-container">
         <div class="hero-shadow"></div>
         <div class="hero-img-container">
-            <img src="images/hero/hero1.jpg" class="hero-img" />
+            <img src="images/hero/hero3.jpg" class="hero-img" />
         </div>
 
         <div class="hero-content">
@@ -51,208 +51,210 @@
         </div>
     </div>
 
-    <div id="events">
-        <div class="cal-container scroll-target">
-            <div class="cal-content">
-                <div class="cal-content-left">
-                    <div class="cal-eyebrow"><span></span> Upcoming Events <span></span></div>
-                    <div class="cal-title">Explore My<br> Event Calendar</div>
-                </div>
-                <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
-            </div>
-
-            <div class="cal-wrapper">
-                <div class="cal-nav">
-                    <i class="fa-solid fa-chevron-left cal-nav-chevron" onclick="changeMonth('left')"></i>
-                    <div class="cal-nav-title">August 2025</div>
-                    <i class="fa-solid fa-chevron-right cal-nav-chevron" onclick="changeMonth('right')"></i>
-                </div>
-
-                <div class="cal-top">
-                    <div class="cal-top-mon">Mon</div>
-                    <div class="cal-top-mon">Tue</div>
-                    <div class="cal-top-mon">Wed</div>
-                    <div class="cal-top-mon">Thu</div>
-                    <div class="cal-top-mon">Fri</div>
-                    <div class="cal-top-mon">Sat</div>
-                    <div class="cal-top-mon">Sun</div>
-                </div>
-                
-                <div class="cal-flex">
-                    <div class="cal-box cal-day-disabled" style="border-top: 0; border-left: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-top: 0; border-right: 0;"><div class="cal-box-day"></div></div>
-                </div>
-                <div class="cal-flex">
-                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-box-today"><div class="cal-box-day"></div>
-                        <div class="cal-today-txt">Today</div>
+    <div class="events-bg">
+        <div id="events">
+            <div class="cal-container scroll-target">
+                <div class="cal-content">
+                    <div class="cal-content-left">
+                        <div class="cal-eyebrow"><span></span> Upcoming Events <span></span></div>
+                        <div class="cal-title">Explore My<br> Event Calendar</div>
                     </div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
-                        <div class="cal-event-head">Pro AM</div>
-                        <div class="cal-event-time">7:30am - 13:00am</div>
-                        <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
+                    <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
+                </div>
+    
+                <div class="cal-wrapper">
+                    <div class="cal-nav">
+                        <i class="fa-solid fa-chevron-left cal-nav-chevron" onclick="changeMonth('left')"></i>
+                        <div class="cal-nav-title">August 2025</div>
+                        <i class="fa-solid fa-chevron-right cal-nav-chevron" onclick="changeMonth('right')"></i>
                     </div>
-                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
-                </div>
-                <div class="cal-flex">
-                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div>
-                    </div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
-                </div>
-                <div class="cal-flex">
-                    <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
-                        <div class="cal-event-head">Open Singles</div>
-                        <div class="cal-event-time">8:30am - 14:00pm</div>
-                        <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
-                    </div>
-                    <div class="cal-box"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
-                </div>
-                <div class="cal-flex">
-                    <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
-                </div>
-                <div class="cal-flex last-flex">
-                    <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
-                    <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="lac-container scroll-target">
-            <div class="cal-content">
-                <div class="cal-content-left">
-                    <div class="cal-eyebrow"><span></span> Upcoming Events <span></span></div>
-                    <div class="cal-title">Explore My<br> Event Calendar</div>
-                </div>
-                <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
-            </div>
-            
-            <div class="lac-wrapper">
-                <div class="lac-nav">
-                    <i class="fa-solid fa-chevron-left lac-nav-chevron" onclick="changeMonth('left')"></i>
-                    <div class="lac-nav-title">August 5, 2025</div>
-                    <i class="fa-solid fa-chevron-right lac-nav-chevron" onclick="changeMonth('right')"></i>
-                </div>
-
-                <div class="lac-scroll">
-                    <div class="lac-top">
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Mon</div>
-                        <div class="lac-top-mon">Tue</div>
-                        <div class="lac-top-mon">Wed</div>
-                        <div class="lac-top-mon">Thu</div>
-                        <div class="lac-top-mon">Fri</div>
-                        <div class="lac-top-mon">Sat</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Mon</div>
-                        <div class="lac-top-mon">Tue</div>
-                        <div class="lac-top-mon">Wed</div>
-                        <div class="lac-top-mon">Thu</div>
-                        <div class="lac-top-mon">Fri</div>
-                        <div class="lac-top-mon">Sat</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Mon</div>
-                        <div class="lac-top-mon">Tue</div>
-                        <div class="lac-top-mon">Wed</div>
-                        <div class="lac-top-mon">Thu</div>
-                        <div class="lac-top-mon">Fri</div>
-                        <div class="lac-top-mon">Sat</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Mon</div>
-                        <div class="lac-top-mon">Tue</div>
-                        <div class="lac-top-mon">Wed</div>
-                        <div class="lac-top-mon">Thu</div>
-                        <div class="lac-top-mon">Fri</div>
-                        <div class="lac-top-mon">Sat</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
-                        <div class="lac-top-mon">Sun</div>
+    
+                    <div class="cal-top">
+                        <div class="cal-top-mon">Mon</div>
+                        <div class="cal-top-mon">Tue</div>
+                        <div class="cal-top-mon">Wed</div>
+                        <div class="cal-top-mon">Thu</div>
+                        <div class="cal-top-mon">Fri</div>
+                        <div class="cal-top-mon">Sat</div>
+                        <div class="cal-top-mon">Sun</div>
                     </div>
                     
-                    <div class="lac-flex">
-                        <div class="lac-box lac-box-today lac-edge-left"><div class="lac-box-day">3</div>
-                            <div class="lac-today-txt">Today</div>
+                    <div class="cal-flex">
+                        <div class="cal-box cal-day-disabled" style="border-top: 0; border-left: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-day-disabled" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-top: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-top: 0; border-right: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                    <div class="cal-flex">
+                        <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-box-today"><div class="cal-box-day"></div>
+                            <div class="cal-today-txt">Today</div>
                         </div>
-                        <div class="lac-box"><div class="lac-box-day">4</div></div>
-                        <div class="lac-box lac-box-event"><div class="lac-box-day">5</div>
-                            <div class="lac-event-head">Pro AM</div>
-                            <div class="lac-event-time">7:30am - 13:00pm</div>
-                            <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
+                            <div class="cal-event-head">Pro AM</div>
+                            <div class="cal-event-time">7:30am - 13:00am</div>
+                            <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
                         </div>
-                        <div class="lac-box"><div class="lac-box-day">6</div></div>
-                        <div class="lac-box"><div class="lac-box-day">7</div></div>
-                        <div class="lac-box lac-edge"><div class="lac-box-day">8</div></div>
-                        <div class="lac-box"><div class="lac-box-day">9</div></div>
-                        <div class="lac-box"><div class="lac-box-day">10</div></div>
-                        <div class="lac-box lac-box-event"><div class="lac-box-day">11</div>
-                            <div class="lac-event-head">Open Singles</div>
-                            <div class="lac-event-time">7:30am - 16:00pm</div>
-                            <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                        <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                    <div class="cal-flex">
+                        <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div>
                         </div>
-                        <div class="lac-box"><div class="lac-box-day">12</div></div>
-                        <div class="lac-box"><div class="lac-box-day">13</div></div>
-                        <div class="lac-box"><div class="lac-box-day">14</div></div>
-                        <div class="lac-box"><div class="lac-box-day">15</div></div>
-                        <div class="lac-box"><div class="lac-box-day">16</div></div>
-                        <div class="lac-box"><div class="lac-box-day">17</div></div>
-                        <div class="lac-box"><div class="lac-box-day">18</div></div>
-                        <div class="lac-box"><div class="lac-box-day">19</div></div>
-                        <div class="lac-box"><div class="lac-box-day">20</div></div>
-                        <div class="lac-box"><div class="lac-box-day">21</div></div>
-                        <div class="lac-box"><div class="lac-box-day">22</div></div>
-                        <div class="lac-box"><div class="lac-box-day">23</div></div>
-                        <div class="lac-box"><div class="lac-box-day">24</div></div>
-                        <div class="lac-box"><div class="lac-box-day">25</div></div>
-                        <div class="lac-box"><div class="lac-box-day">26</div></div>
-                        <div class="lac-box"><div class="lac-box-day">27</div></div>
-                        <div class="lac-box"><div class="lac-box-day">28</div></div>
-                        <div class="lac-box"><div class="lac-box-day">29</div></div>
-                        <div class="lac-box"><div class="lac-box-day">30</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
-                        <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                    <div class="cal-flex">
+                        <div class="cal-box" style="border-left: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box cal-box-event"><div class="cal-box-day"></div>
+                            <div class="cal-event-head">Open Singles</div>
+                            <div class="cal-event-time">8:30am - 14:00pm</div>
+                            <div class="cal-event-cta" onclick="openInfoModal()">More info</div>
+                        </div>
+                        <div class="cal-box"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-right: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                    <div class="cal-flex">
+                        <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                    <div class="cal-flex last-flex">
+                        <div class="cal-box" style="border-left: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-bottom: 0;"><div class="cal-box-day"></div></div>
+                        <div class="cal-box" style="border-right: 0; border-bottom: 0;"><div class="cal-box-day"></div></div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="lac-container scroll-target">
+                <div class="cal-content">
+                    <div class="cal-content-left">
+                        <div class="cal-eyebrow"><span></span> Upcoming Events <span></span></div>
+                        <div class="cal-title">Explore My<br> Event Calendar</div>
+                    </div>
+                    <div class="cal-para">Explore and enter upcoming golf events including pro-ams, competitions, and social rounds. View details, secure your spot, and stay involved in our community—all through one easy-to-use calendar.</div>
+                </div>
+                
+                <div class="lac-wrapper">
+                    <div class="lac-nav">
+                        <i class="fa-solid fa-chevron-left lac-nav-chevron" onclick="changeMonth('left')"></i>
+                        <div class="lac-nav-title">August 5, 2025</div>
+                        <i class="fa-solid fa-chevron-right lac-nav-chevron" onclick="changeMonth('right')"></i>
+                    </div>
+    
+                    <div class="lac-scroll">
+                        <div class="lac-top">
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Mon</div>
+                            <div class="lac-top-mon">Tue</div>
+                            <div class="lac-top-mon">Wed</div>
+                            <div class="lac-top-mon">Thu</div>
+                            <div class="lac-top-mon">Fri</div>
+                            <div class="lac-top-mon">Sat</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Mon</div>
+                            <div class="lac-top-mon">Tue</div>
+                            <div class="lac-top-mon">Wed</div>
+                            <div class="lac-top-mon">Thu</div>
+                            <div class="lac-top-mon">Fri</div>
+                            <div class="lac-top-mon">Sat</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Mon</div>
+                            <div class="lac-top-mon">Tue</div>
+                            <div class="lac-top-mon">Wed</div>
+                            <div class="lac-top-mon">Thu</div>
+                            <div class="lac-top-mon">Fri</div>
+                            <div class="lac-top-mon">Sat</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Mon</div>
+                            <div class="lac-top-mon">Tue</div>
+                            <div class="lac-top-mon">Wed</div>
+                            <div class="lac-top-mon">Thu</div>
+                            <div class="lac-top-mon">Fri</div>
+                            <div class="lac-top-mon">Sat</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                            <div class="lac-top-mon">Sun</div>
+                        </div>
+                        
+                        <div class="lac-flex">
+                            <div class="lac-box lac-box-today lac-edge-left"><div class="lac-box-day">3</div>
+                                <div class="lac-today-txt">Today</div>
+                            </div>
+                            <div class="lac-box"><div class="lac-box-day">4</div></div>
+                            <div class="lac-box lac-box-event"><div class="lac-box-day">5</div>
+                                <div class="lac-event-head">Pro AM</div>
+                                <div class="lac-event-time">7:30am - 13:00pm</div>
+                                <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                            </div>
+                            <div class="lac-box"><div class="lac-box-day">6</div></div>
+                            <div class="lac-box"><div class="lac-box-day">7</div></div>
+                            <div class="lac-box lac-edge"><div class="lac-box-day">8</div></div>
+                            <div class="lac-box"><div class="lac-box-day">9</div></div>
+                            <div class="lac-box"><div class="lac-box-day">10</div></div>
+                            <div class="lac-box lac-box-event"><div class="lac-box-day">11</div>
+                                <div class="lac-event-head">Open Singles</div>
+                                <div class="lac-event-time">7:30am - 16:00pm</div>
+                                <div class="lac-event-cta" onclick="openInfoModal()">More info</div>
+                            </div>
+                            <div class="lac-box"><div class="lac-box-day">12</div></div>
+                            <div class="lac-box"><div class="lac-box-day">13</div></div>
+                            <div class="lac-box"><div class="lac-box-day">14</div></div>
+                            <div class="lac-box"><div class="lac-box-day">15</div></div>
+                            <div class="lac-box"><div class="lac-box-day">16</div></div>
+                            <div class="lac-box"><div class="lac-box-day">17</div></div>
+                            <div class="lac-box"><div class="lac-box-day">18</div></div>
+                            <div class="lac-box"><div class="lac-box-day">19</div></div>
+                            <div class="lac-box"><div class="lac-box-day">20</div></div>
+                            <div class="lac-box"><div class="lac-box-day">21</div></div>
+                            <div class="lac-box"><div class="lac-box-day">22</div></div>
+                            <div class="lac-box"><div class="lac-box-day">23</div></div>
+                            <div class="lac-box"><div class="lac-box-day">24</div></div>
+                            <div class="lac-box"><div class="lac-box-day">25</div></div>
+                            <div class="lac-box"><div class="lac-box-day">26</div></div>
+                            <div class="lac-box"><div class="lac-box-day">27</div></div>
+                            <div class="lac-box"><div class="lac-box-day">28</div></div>
+                            <div class="lac-box"><div class="lac-box-day">29</div></div>
+                            <div class="lac-box"><div class="lac-box-day">30</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                            <div class="lac-box lac-edge-right"><div class="lac-box-day">31</div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,6 +444,7 @@
         <div class="serv-para scroll-target">Receive expert guidance to improve your swing, refine technique, and enjoy more consistent, confident performance on course.</div>
         <div class="serv-col">
             <div class="serv-wrapper left-radius scroll-target">
+                <div class="serv-wrapper-bg" style="right: 0;"></div>
                 <div class="serv-img-container">
                     <img src="images/serv-lessons.jpg" class="serv-img" />
                 </div>
@@ -452,6 +455,7 @@
                 </div>
             </div>
             <div class="serv-wrapper right-radius scroll-target">
+                <div class="serv-wrapper-bg" style="left: 0;"></div>
                 <div class="serv-content">
                     <div class="serv-head">Custom Club Fitting</div>
                     <div class="serv-txt">Unlock your best performance with clubs tailored to your swing. Properly fitted equipment improves accuracy, distance, and comfort, giving you consistency and confidence every time you step onto the course.</div>

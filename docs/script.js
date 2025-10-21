@@ -171,6 +171,10 @@ const observer = new IntersectionObserver((entries, observer) => {
           entry.target.style.top = "0px";
           entry.target.style.opacity = "1";
 
+          if(entry.target.classList.contains("serv-wrapper")){
+            entry.target.querySelector(".serv-wrapper-bg").style.width = "15%";
+          }
+
         observer.unobserve(entry.target);
       }
     });

@@ -1330,7 +1330,7 @@ a.foot-link:hover {
 .banner-container {
     overflow: hidden;
     width: 100%;
-    height: 450px;
+    height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2230,7 +2230,6 @@ span.review-star-txt {
         letter-spacing: 2px;
     }
     .ben-title {
-        margin-top: 26px;
         font-size: 54px;
         font-weight: 500;
         line-height: 1.2;
@@ -2238,7 +2237,6 @@ span.review-star-txt {
     .ben-desc {
         line-height: 1.6;
         width: 600px;
-        margin-top: 26px;
         font-size: 16px;
     }
     .ben-flex {
@@ -2636,8 +2634,7 @@ span.review-star-txt {
         letter-spacing: 2px;
     }
     .ben-title {
-        margin-top: 26px;
-        font-size: 32px;
+        font-size: 42px;
         font-weight: 500;
         line-height: 1.3;
     }
@@ -2645,8 +2642,7 @@ span.review-star-txt {
         line-height: 1.6;
         width: 500px;
         max-width: 100%;
-        margin-top: 26px;
-        margin-bottom: 100px;
+        margin-bottom: 40px;
         font-size: 15px;
     }
     .ben-flex {
@@ -3029,6 +3025,10 @@ span.review-star-txt {
 
     .serv-title {
         font-size: 28px;
+    }
+
+    .banner-img {
+        object-position: 50% 60%;
     }
 }
 @media only screen and (max-width: 550px){

@@ -1716,17 +1716,15 @@ i.ben-tick {
     justify-content: flex-start;
 }
 .gal-img1 {
-    animation: gal_slide1 28s linear infinite;
+    animation: gal_slide1 32s linear infinite;
     border-radius: 6px;
-    background-color: var(--blue-dark);
     aspect-ratio: 1 / 1;
     height: 300px;
     width: auto;
 }
 .gal-img2 {
-    animation: gal_slide2 48s linear infinite;
+    animation: gal_slide2 28s linear infinite;
     border-radius: 6px;
-    background-color: var(--blue-dark);
     aspect-ratio: 1 / 1;
     height: 250px;
     width: auto;
@@ -1752,7 +1750,8 @@ i.ben-tick {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(1446px);
+    transform: translateX(1898px);
+
     }
 }
 @keyframes gal_slide2 {
@@ -1760,7 +1759,7 @@ i.ben-tick {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(-2345px);
+    transform: translateX(-1597px);
     }
 }
 /*///////////////////////////////////////////////////////////////*/

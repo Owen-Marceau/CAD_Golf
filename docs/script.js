@@ -127,12 +127,6 @@ function createHtml(){
 }
 createHtml();
 
-document.addEventListener("keydown", (e) => {
-    if(e.key == "y"){
-        console.log(window.innerWidth);
-    }
-});
-
 function toggleMenu(){
     if(!menuOpen){
         document.querySelector(".line1").style.top = "11px";
@@ -232,7 +226,6 @@ document.querySelectorAll(".reg-option").forEach(option => {
     option.addEventListener("click", () => {
         document.querySelector(".reg-selector-txt").textContent = option.textContent;
         document.getElementById("players").value = option.dataset.set;
-        console.log(document.getElementById("players").value);
     });
 });
 
@@ -345,7 +338,6 @@ function setCalendar(monthIdx, yearStr, firstCall){
             }
 
             const responseData = await response.json();
-            console.log(responseData.bookings);
             bookings = responseData.bookings;
 
             resetBoxes();

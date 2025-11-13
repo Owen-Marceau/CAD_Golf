@@ -8,7 +8,6 @@ const MySQLStore = require('express-mysql-session')(session);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require('dotenv').config();
-const nodemailer = require('nodemailer');
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,

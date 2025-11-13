@@ -98,7 +98,7 @@ function createHtml(){
                     </div>
                     <div class="foot-ul">
                         <div class="foot-label">Our Location</div>
-                        <div class="foot-link">Willingdon Golf Club</div>
+                        <div class="foot-link">Tilgate Forest Golf Centre</div>
                         <div class="foot-link">Southdown Road</div>
                         <div class="foot-link">Eastbourne</div>
                         <div class="foot-link">BN22 9AA</div>

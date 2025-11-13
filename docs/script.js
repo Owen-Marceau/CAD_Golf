@@ -295,6 +295,28 @@ if(document.querySelector(".info-form")){
     });
 }
 
+document.querySelectorAll(".plan-pill").forEach((pill, idx) => {
+    pill.addEventListener("click", () => {
+        document.querySelectorAll(".plan-pill").forEach(other => {
+            other.classList.remove("plan-pill-active");
+        });
+        pill.classList.add("plan-pill-active");
+
+        document.querySelectorAll(".plan-flex").forEach(other => {
+            other.classList.remove("plan-flex-active");
+            setTimeout(() => {
+                other.style.display = "none";
+            }, 400);
+        });
+        setTimeout(() => {
+            document.querySelectorAll(".plan-flex")[idx].style.display = "flex";
+            setTimeout(() => {
+                document.querySelectorAll(".plan-flex")[idx].classList.add("plan-flex-active");
+            }, 50);
+        }, 400);
+    });
+});
+
 
 
 function setCalendar(monthIdx, yearStr, firstCall){

@@ -27,7 +27,7 @@ function createHtml(){
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
-        <a href="index.html#contact"><div class="menu-section">Contact Me</div></a>
+        <a href="lessons-and-fittings.html"><div class="menu-section">Golf Events</div></a>
     `
 
     let header = document.createElement("div");
@@ -43,10 +43,10 @@ function createHtml(){
                 <a href="about.html" class="header-link">About Me</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
                 <a href="index.html#events" class="header-link">View events</a>
-                <a href="lessons-and-fittings.html" class="header-link">Lessons & Fitting</a>
+                <a href="lessons-and-fittings.html" class="header-link">Golf Lessons</a>
             </div>
 
-            <a href="index.html#events" class="btn-header">Book Now</a>
+            <a href="https://cadgolfperformance.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" class="btn-header">Book Lesson</a>
             <div class="header-burger" onclick="toggleMenu()">
                 <div class="burger-line line1"></div>
                 <div class="burger-line line2"></div>
@@ -307,6 +307,21 @@ document.querySelectorAll(".plan-pill").forEach((pill, idx) => {
                 document.querySelectorAll(".plan-flex")[idx].classList.add("plan-flex-active");
             }, 100);
         }, 400);
+    });
+});
+
+document.querySelectorAll(".smodal-getter").forEach((getter, idx) => {
+    getter.addEventListener("click", (e) => {
+        document.querySelectorAll(".smodal-modal")[idx].style.opacity = "1";
+        document.querySelectorAll(".smodal-modal")[idx].style.pointerEvents = "auto";
+    });
+});
+document.querySelectorAll(".smodal-modal").forEach(modal => {
+    modal.addEventListener("click", (e) => {
+        if(!document.querySelector(".smodal-wrapper").contains(e.target) || document.querySelector("i.smodal-x").contains(e.target)){
+            modal.style.opacity = "0";
+            modal.style.pointerEvents = "none";
+        }
     });
 });
 

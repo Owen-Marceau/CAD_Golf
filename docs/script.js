@@ -305,7 +305,7 @@ document.querySelectorAll(".plan-pill").forEach((pill, idx) => {
             document.querySelectorAll(".plan-flex")[idx].style.display = "flex";
             setTimeout(() => {
                 document.querySelectorAll(".plan-flex")[idx].classList.add("plan-flex-active");
-            }, 50);
+            }, 100);
         }, 400);
     });
 });

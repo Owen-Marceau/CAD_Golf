@@ -325,6 +325,26 @@ document.querySelectorAll(".smodal-modal").forEach(modal => {
     });
 });
 
+document.querySelectorAll(".para-long-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        if(document.querySelector(".para-long").style.maxHeight == "600px"){
+            document.querySelectorAll(".para-long-btn").forEach(all => {
+                all.textContent = "Read More";
+            });
+            document.querySelectorAll(".para-long").forEach(para => {
+                para.style.maxHeight = "100px"; 
+            });
+        } else {
+            document.querySelectorAll(".para-long-btn").forEach(all => {
+                all.textContent = "Read Less";
+            });
+            document.querySelectorAll(".para-long").forEach(para => {
+                para.style.maxHeight = "600px"; 
+            });
+        }
+    });
+});
+
 
 
 function setCalendar(monthIdx, yearStr, firstCall){
@@ -556,3 +576,21 @@ function makeBoxToday(box){
         `;    
     }
 }
+
+let benIdx = 0;
+setInterval(() => {
+    benIdx++;
+    if(benIdx == 3) benIdx = 0;
+    document.querySelectorAll(".ben-img-change").forEach((img, idx) => {
+        img.style.opacity = "0";
+        setTimeout(() => {
+            img.style.display = "none";
+            if(idx == benIdx){
+                img.style.display = "block";
+                setTimeout(() => {
+                    img.style.opacity = "1";
+                }, 30);
+            }
+        }, 300);
+    });
+}, 4000);

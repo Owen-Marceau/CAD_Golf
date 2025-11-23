@@ -1006,6 +1006,38 @@ i.book-modal-check {
     height: 550px;
     padding: 40px;
 }
+.phil-flex {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+.phil-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+}
+.phil-img {
+    width: 500px;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phil-img img {
+    border-radius: 12px;
+    transition: 0.3s ease;
+    width: 100%;
+    height: auto;
+}
 .left-radius {
     border-top-left-radius: 500px;
     border-bottom-left-radius: 500px;
@@ -1033,6 +1065,14 @@ i.book-modal-check {
     width: auto;
 }
 .serv-content {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+    text-align: left;
+    width: 600px;
+}
+.phil-content {
+    flex-shrink: 0;
     position: relative;
     z-index: 3;
     text-align: left;
@@ -2474,6 +2514,18 @@ span.review-star-txt {
 @media only screen and (max-width: 1300px){
     .cal-title {
         font-size: 60px;
+    }
+
+    .phil-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .phil-img {
+        width: 500px;
+    }
+    .phil-content {
+        width: 100%;
+        padding-bottom: 20px;
     }
 
     .contact-email, .contact-head, .btn-contact-left {

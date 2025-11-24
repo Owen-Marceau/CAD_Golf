@@ -1038,6 +1038,31 @@ i.book-modal-check {
     width: 100%;
     height: auto;
 }
+.phil-slider {
+    mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 3%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 65%, rgba(255, 255, 255, 0) 97%);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    gap: 20px;
+    padding: 20px 0;
+    height: 440px;
+}
+.phil-slider img {
+    border-radius: 12px;
+    height: 100%;
+    width: auto;
+    animation: philSlider 30s linear infinite;
+}
+@keyframes philSlider {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(1514px);
+    }
+}
 .left-radius {
     border-top-left-radius: 500px;
     border-bottom-left-radius: 500px;
@@ -1102,6 +1127,9 @@ i.book-modal-check {
     padding: 12px 32px;
     transition: 0.2s ease;
     gap: 14px;
+}
+.btn-black {
+    background-color: hsl(0, 0%, 20%) !important;
 }
 .btn-serv-low {
     display: flex;
@@ -3427,6 +3455,10 @@ span.review-star-txt {
 
     .events-bg {
         padding: 80px 0;
+    }
+
+    .phil-slider {
+        mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 1%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 65%, rgba(255, 255, 255, 0) 99%);
     }
 }
 @media only screen and (max-width: 550px){

@@ -1039,7 +1039,7 @@ i.book-modal-check {
     height: auto;
 }
 .phil-slider {
-    mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 3%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 65%, rgba(255, 255, 255, 0) 97%);
+    mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 3%, rgb(255, 255, 255) 15%, rgb(255, 255, 255) 85%, rgba(255, 255, 255, 0) 97%);
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -1606,21 +1606,22 @@ a.foot-link:hover {
     margin: 36px 0;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 .hr-other {
     display: none;
 }
 .about-flex {
-    margin-bottom: 20px;
     width: 700px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 25px;
 }
 .about-section {
     background-color: white;
     box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.15);
     width: 100%;
+    max-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2710,7 +2711,8 @@ span.review-star-txt {
     }
     .ben-content {
         text-align: left;
-        width: 370px;
+        width: 430px;
+        max-width: 100%;
     }
     .ben-icon {
         font-size: 18px;
@@ -3083,9 +3085,9 @@ span.review-star-txt {
         display: block;
     }
     .about-feat {
-        gap: 28px;
     }
     .about-section {
+        max-width: 100%;
         gap: 28px;
     }
     .about-head {
@@ -3199,7 +3201,7 @@ span.review-star-txt {
 }
 @media only screen and (max-width: 700px){
     .header-flex, .lac-container, .contact-container, .trust-container, .banner-content, .about-container, .gal-container, .review-container, .serv-container, .con-container, .ben-container, .plan-container {
-        max-width: calc(100% - 25px);
+        max-width: calc(100% - 24px);
     }
 
     .trust-container {
@@ -3524,5 +3526,25 @@ span.review-star-txt {
     }
     .about-flex {
         margin-bottom: 0;
+    }
+
+    .ben-ben-txt {
+        font-size: 15px;
+    }
+
+    .phil-slider {
+        mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 1%, rgb(255, 255, 255) 23%, rgb(255, 255, 255) 77%, rgba(255, 255, 255, 0) 99%);
+        height: 240px;
+    }
+    .phil-slider img {
+        animation: philSlider 20s linear infinite;
+    }
+    @keyframes philSlider {
+        0% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(783px);
+        }
     }
 }

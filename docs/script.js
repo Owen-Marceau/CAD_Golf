@@ -27,7 +27,7 @@ function createHtml(){
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
-        <a href="lessons-and-fittings.html"><div class="menu-section">Golf Events</div></a>
+        <a href="lessons-and-fittings.html"><div class="menu-section">Golf Lessons</div></a>
     `
 
     let header = document.createElement("div");
@@ -99,9 +99,9 @@ function createHtml(){
                     <div class="foot-ul">
                         <div class="foot-label">Our Location</div>
                         <div class="foot-link">Tilgate Forest Golf Centre</div>
-                        <div class="foot-link">Southdown Road</div>
-                        <div class="foot-link">Eastbourne</div>
-                        <div class="foot-link">BN22 9AA</div>
+                        <div class="foot-link">Titmus Drive</div>
+                        <div class="foot-link">Crawley</div>
+                        <div class="foot-link">RH10 5EU</div>
                     </div>
                 </div>
             </div>

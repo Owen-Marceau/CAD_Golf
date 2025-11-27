@@ -2817,6 +2817,9 @@ span.review-star-txt {
     }
 }
 @media only screen and (max-width: 1000px){
+    .teachlogo {
+        display: none;
+    }
     .header-nav {
         display: none;
     }

@@ -20,7 +20,7 @@ let currentYear = now.getFullYear().toString();
 
 window.addEventListener('load', () => {
     if (window.location.hash == '#event') {
-        const el = document.querySelector('#event');
+        const el = document.querySelector('.events-bg');
         if (el) {
             el.scrollIntoView({
                 behavior: 'smooth',
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
     }
 });
 function scrollEvents(){
-        const el = document.querySelector('#event');
+        const el = document.querySelector('.events-bg');
         if (el) {
             el.scrollIntoView({
                 behavior: 'smooth',
@@ -43,7 +43,7 @@ function createHtml(){
     let menu = document.createElement("div");
     menu.classList.add("menu-container");
     menu.innerHTML = `
-        <a href="index.html#home"><div class="menu-section menu-dark">Home</div></a>
+        <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#event"><div class="menu-section menu-dark">View Events</div></a>

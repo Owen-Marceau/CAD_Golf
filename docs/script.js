@@ -446,10 +446,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
 
                     if(monthIdx == startPosition && boxDay == todayDate){
                         makeBoxToday(box);
-                        document.querySelector(".lac-flex").scrollTo({
-                            left: box.offsetLeft,
-                            behavior: 'smooth',
-                        });
+                        document.querySelector(".lac-flex").scrollLeft = box.offsetLeft;
                         //box.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                         if(firstCall){
                             todayBox = box;

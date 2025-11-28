@@ -268,14 +268,14 @@ body {
 }
 .trust-img {
     height: 90px;
-    animation: slide_sponsors 20s linear infinite;
+    animation: slide_sponsors 32s linear infinite;
 }
 @keyframes slide_sponsors {
     0% {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(773px);
+        transform: translateX(1408px);
     }
 }
 /*//////////////////////////////////////////////////////////////////*/

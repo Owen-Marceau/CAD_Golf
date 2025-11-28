@@ -18,27 +18,6 @@ let currentMonth = now.getMonth();
 const startYear = now.getFullYear().toString();
 let currentYear = now.getFullYear().toString();
 
-window.addEventListener('load', () => {
-    if (window.location.hash == '#event') {
-        const el = document.querySelector('.events-bg');
-        if (el) {
-            el.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
-});
-function scrollEvents(){
-        const el = document.querySelector('.events-bg');
-        if (el) {
-            el.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-}
-
 function createHtml(){
     let menu = document.createElement("div");
     menu.classList.add("menu-container");

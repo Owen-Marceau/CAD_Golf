@@ -29,7 +29,7 @@ function createHtml(){
     let menu = document.createElement("div");
     menu.classList.add("menu-container");
     menu.innerHTML = `
-        <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
+        <a href="index.html#home"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
         <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
@@ -38,6 +38,7 @@ function createHtml(){
 
     let header = document.createElement("div");
     header.classList.add("header");
+    header.id = "home";
     header.innerHTML = `
         <div class="header-flex">
             <a href="index.html">

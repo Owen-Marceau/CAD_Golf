@@ -25,13 +25,12 @@ function createHtml(){
         <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
-        <a href="index.html#event"><div class="menu-section menu-dark">View Events</div></a>
+        <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
         <a href="lessons-and-fittings.html"><div class="menu-section">Golf Lessons</div></a>
     `
 
     let header = document.createElement("div");
     header.classList.add("header");
-    header.id = "home";
     header.innerHTML = `
         <div class="header-flex">
             <a href="index.html">
@@ -42,7 +41,7 @@ function createHtml(){
                 <a href="index.html" class="header-link">Home</a>
                 <a href="about.html" class="header-link">About Me</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
-                <a href="index.html#event" class="header-link">View events</a>
+                <a href="index.html#events" class="header-link">View events</a>
                 <a href="lessons-and-fittings.html" class="header-link">Golf Lessons</a>
             </div>
 
@@ -86,7 +85,7 @@ function createHtml(){
                         <div class="foot-label">Navigation</div>
                         <a href="about-us.html" class="foot-link">About Me</a>
                         <a href="about.html" class="foot-link">Gallery</a>
-                        <a href="index.html#event" class="foot-link">Book event</a>
+                        <a href="index.html#events" class="foot-link">Book event</a>
                         <a href="index.html#contact" class="foot-link">Contact Me</a>
                     </div>
                     <div class="foot-ul">
@@ -447,7 +446,11 @@ function setCalendar(monthIdx, yearStr, firstCall){
 
                     if(monthIdx == startPosition && boxDay == todayDate){
                         makeBoxToday(box);
-                        box.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                        document.querySelector(".lac-flex").scrollTo({
+                            left: box.offsetLeft,
+                            behavior: 'smooth',
+                        });
+                        //box.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                         if(firstCall){
                             todayBox = box;
                         }

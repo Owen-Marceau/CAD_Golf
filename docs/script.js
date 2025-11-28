@@ -18,13 +18,26 @@ let currentMonth = now.getMonth();
 const startYear = now.getFullYear().toString();
 let currentYear = now.getFullYear().toString();
 
-window.addEventListener("load", () => {
-    if (!window.location.hash) {
-        window.scrollTo({
-            top: 0,
-        });
+window.addEventListener('load', () => {
+    if (window.location.hash == '#event') {
+        const el = document.querySelector('#event');
+        if (el) {
+            el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     }
 });
+function scrollEvents(){
+        const el = document.querySelector('#event');
+        if (el) {
+            el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+}
 
 function createHtml(){
     let menu = document.createElement("div");
@@ -33,7 +46,7 @@ function createHtml(){
         <a href="index.html#home"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
-        <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
+        <a href="index.html#event"><div class="menu-section menu-dark">View Events</div></a>
         <a href="lessons-and-fittings.html"><div class="menu-section">Golf Lessons</div></a>
     `
 
@@ -50,7 +63,7 @@ function createHtml(){
                 <a href="index.html" class="header-link">Home</a>
                 <a href="about.html" class="header-link">About Me</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
-                <a href="index.html#events" class="header-link">View events</a>
+                <a href="index.html#event" class="header-link">View events</a>
                 <a href="lessons-and-fittings.html" class="header-link">Golf Lessons</a>
             </div>
 
@@ -94,7 +107,7 @@ function createHtml(){
                         <div class="foot-label">Navigation</div>
                         <a href="about-us.html" class="foot-link">About Me</a>
                         <a href="about.html" class="foot-link">Gallery</a>
-                        <a href="index.html#events" class="foot-link">Book event</a>
+                        <a href="index.html#event" class="foot-link">Book event</a>
                         <a href="index.html#contact" class="foot-link">Contact Me</a>
                     </div>
                     <div class="foot-ul">

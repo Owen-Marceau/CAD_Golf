@@ -18,6 +18,12 @@ let currentMonth = now.getMonth();
 const startYear = now.getFullYear().toString();
 let currentYear = now.getFullYear().toString();
 
+if (!window.location.hash) {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 
 function createHtml(){
     let menu = document.createElement("div");

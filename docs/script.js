@@ -582,6 +582,9 @@ function makeBoxToday(box){
         `;    
     }
 }
+function resetCal(){
+    setCalendar(startPosition, startYear, false);
+}
 
 let benIdx = 0;
 setInterval(() => {

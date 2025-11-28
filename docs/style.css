@@ -443,6 +443,18 @@ body {
 .cal-event-cta:hover {
     color: hsl(208, 76%, 15%);
 }
+.cal-reset {
+    background-color: var(--blue-dark);
+    color: white;
+    margin-bottom: 18px;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 22px;
+    transition: 0.2s ease;
+}
 /*////////////////////////////////////////////////////////////////*/
 
 /*////////////////////// INFO MODAL SECTION ////////////////////////*/

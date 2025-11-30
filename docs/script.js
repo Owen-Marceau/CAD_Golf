@@ -126,23 +126,6 @@ function createHtml(){
 }
 createHtml();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const vid = document.querySelector(".hero-video");
-    const vid2 = document.querySelectorAll(".hero-video")[1];
-
-    vid.addEventListener("ended", () => {
-        vid.style.display = "none";
-        vid2.style.display = "block";
-        vid2.play();
-    });
-
-    vid2.addEventListener("ended", () => {
-        vid2.style.display = "none";
-        vid.style.display = "block";
-        vid.play();
-    });
-});
-
 function toggleMenu(){
     if(!menuOpen){
         document.querySelector(".line1").style.top = "11px";

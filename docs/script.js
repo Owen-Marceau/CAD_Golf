@@ -24,9 +24,9 @@ function createHtml(){
     menu.innerHTML = `
         <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
-        <a href="gallery.html"><div class="menu-section">Gallery</div></a>
-        <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
         <a href="lessons-and-fittings.html"><div class="menu-section">Golf Lessons</div></a>
+        <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
+        <a href="gallery.html"><div class="menu-section">Gallery</div></a>
     `
 
     let header = document.createElement("div");
@@ -40,9 +40,9 @@ function createHtml(){
             <div class="header-nav">
                 <a href="index.html" class="header-link">Home</a>
                 <a href="about.html" class="header-link">About Me</a>
-                <a href="gallery.html" class="header-link">Gallery</a>
-                <a href="index.html#events" class="header-link">View events</a>
                 <a href="lessons-and-fittings.html" class="header-link">Golf Lessons</a>
+                <a href="index.html#events" class="header-link">View events</a>
+                <a href="gallery.html" class="header-link">Gallery</a>
             </div>
 
             <a href="https://cadgolfperformance.setmore.com?utm_source=qr-code&utm_medium=more-share-bp" class="btn-header">Book Lesson</a>
@@ -119,12 +119,29 @@ function createHtml(){
     } else if(document.querySelector(".about")){
         document.querySelectorAll(".header-link")[1].classList.add("header-link-active");
     } else if(document.querySelector(".gallery")){
-        document.querySelectorAll(".header-link")[2].classList.add("header-link-active");
-    } else if(document.querySelector(".lessons")){
         document.querySelectorAll(".header-link")[4].classList.add("header-link-active");
+    } else if(document.querySelector(".lessons")){
+        document.querySelectorAll(".header-link")[2].classList.add("header-link-active");
     }
 }
 createHtml();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const vid = document.querySelector(".hero-video");
+    const vid2 = document.querySelectorAll(".hero-video")[1];
+
+    vid.addEventListener("ended", () => {
+        vid.style.display = "none";
+        vid2.style.display = "block";
+        vid2.play();
+    });
+
+    vid2.addEventListener("ended", () => {
+        vid2.style.display = "none";
+        vid.style.display = "block";
+        vid.play();
+    });
+});
 
 function toggleMenu(){
     if(!menuOpen){

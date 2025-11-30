@@ -16,8 +16,12 @@
         <div class="hero-img-container">
             <!-- <img src="images/hero/hero3.jpg" class="hero-img" /> -->
             <div class="video-container">
-                <video class="hero-video" autoplay muted loop playsinline>
+                <video class="hero-video" style="z-index: 1;" autoplay muted playsinline>
                     <source src="images/hero/vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="hero-video hero-video2" style="display: none; z-index: 0;" muted playsinline>
+                    <source src="images/herovideo2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -77,6 +81,7 @@
                     </div>
                 </div>
                 <div class="cal-reset" onclick="resetCal()">Today's Date</div>
+                <div class="cal-note" style="margin-bottom: 20px; font-size: 14px;">Note that some events are still being arranged.</div>
                 <div class="cal-wrapper">
                     <div class="cal-nav">
                         <i class="fa-solid fa-chevron-left cal-nav-chevron" onclick="changeMonth('left')"></i>
@@ -173,6 +178,7 @@
                     </div>
                 </div>
                 <div class="cal-reset" onclick="resetCal()">Today's Date</div>
+                <div class="cal-note" style="margin-bottom: 20px; font-size: 14px;">Note that some events are still being arranged.</div>
                 
                 <div class="lac-wrapper">
                     <div class="lac-nav">
@@ -462,7 +468,7 @@
             <div class="serv-wrapper left-radius scroll-target">
                 <div class="serv-wrapper-bg" style="right: 0;"></div>
                 <div class="serv-img-container">
-                    <img src="images/serv3.jpg" class="serv-img" />
+                    <img src="images/serv9.jpg" class="serv-img" />
                 </div>
                 <div class="serv-content">
                     <div class="serv-head">Golf Lessons</div>
@@ -479,8 +485,7 @@
                 </div>
 
                 <div class="new-img-container">
-                    <img src="images/fittings2.jpg" class="new-img new-img1" />
-                    <img src="images/lessons2.jpg" class="new-img new-img2" />
+                    <img src="images/serv10.jpg" class="new-img new-img2" />
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 let menuOpen = false;
 let playerDropActive = false;
 
-let url = "https://cad-golf-474x.onrender.com"; // https://cad-golf.onrender.com
+let url = ""; // https://cad-golf-474x.onrender.com
 let todayBox;
 let currentEvent;
 const months = [
@@ -440,6 +440,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
                 if(idx >= startIdx && idx < (endIdx + startIdx)){
                     box.querySelector(".lac-box-day").textContent = String(idx - (startIdx - 1));
                     let boxDay = Number(String(idx - (startIdx - 1)));
+                    console.log(document.querySelectorAll(".lac-top-mon"));
                     document.querySelectorAll(".lac-top-mon")[idx].style.display = "flex";
                     let subtractNum = Math.floor(idx / 7) * 7;
                     document.querySelectorAll(".lac-top-mon")[idx].textContent = days[idx - subtractNum];

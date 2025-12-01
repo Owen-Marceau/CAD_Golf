@@ -3584,4 +3584,25 @@ span.review-star-txt {
         width: auto;
         height: 100%;
     }
+
+    .review-bottom {
+        gap: 12px;
+    }
+    .review-col {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    .review-pfp {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+    .review-name {
+        font-size: 14px;
+    }
+    .review-date {
+        font-size: 13px;
+    }
 }

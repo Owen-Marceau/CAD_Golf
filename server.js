@@ -28,7 +28,7 @@ const cors = require('cors');
 const e = require('express');
 
 app.use(cors({
-  origin: 'https://owen-marceau.github.io', // exact GitHub Pages URL
+  origin: 'https://cadgolfperformance.com', // exact GitHub Pages URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));

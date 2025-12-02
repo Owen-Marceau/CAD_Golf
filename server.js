@@ -9,19 +9,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require('dotenv').config();
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.PORT // 24642 or 3306
+    port: process.env.PORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
-db.connect((err) => {
-    if (err) {
-        console.error('Database connection failed:', err.stack);
-        return;
-    }
-    console.log('Connected to MySQL database.');
+db.query('SELECT 1', (err, results) => {
+    if (err) console.error('Error running query:', err);
+    else console.log('Database is working');
 });
 
 const cors = require('cors');

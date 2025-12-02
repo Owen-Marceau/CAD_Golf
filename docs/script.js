@@ -380,7 +380,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
                     box.querySelector(".cal-box-day").textContent = String(idx - (startIdx - 1));
                     let boxDay = Number(String(idx - (startIdx - 1)));
 
-                    if(monthIdx == startPosition && boxDay == todayDate){
+                    if(monthIdx == startPosition && boxDay == todayDate && startYear == currentYear){
                         makeBoxToday(box);
                         if(firstCall){
                             todayBox = box;
@@ -445,7 +445,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
                     let subtractNum = Math.floor(idx / 7) * 7;
                     document.querySelectorAll(".lac-top-mon")[idx].textContent = days[idx - subtractNum];
 
-                    if(monthIdx == startPosition && boxDay == todayDate){
+                    if(monthIdx == startPosition && boxDay == todayDate && startYear == currentYear){
                         makeBoxToday(box);
                         document.querySelector(".lac-flex").scrollLeft = box.offsetLeft;
                         //box.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });

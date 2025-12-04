@@ -1,7 +1,7 @@
 let menuOpen = false;
 let playerDropActive = false;
 
-let url = "https://cad-golf-474x.onrender.com"; // 
+let url = ""; // https://cad-golf-474x.onrender.com
 let todayBox;
 let currentEvent;
 const months = [
@@ -381,6 +381,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
                     let boxDay = Number(String(idx - (startIdx - 1)));
 
                     if(monthIdx == startPosition && boxDay == todayDate && startYear == currentYear){
+                        console.log(currentYear)
                         makeBoxToday(box);
                         if(firstCall){
                             todayBox = box;

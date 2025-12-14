@@ -395,6 +395,7 @@ function setCalendar(monthIdx, yearStr, firstCall){
                             if(booking.max_slots == booking.current_slots){
                                 taken = " (no spots left)";
                             }
+                            box.style.backgroundColor = "transparent";
                             if(booking.event_host == "SPGU"){
                                 box.style.backgroundColor = "hsla(140, 35%, 90%, 0.35)";
                             } else if(booking.event_host == "PGA"){

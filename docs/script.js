@@ -395,6 +395,15 @@ function setCalendar(monthIdx, yearStr, firstCall){
                             if(booking.max_slots == booking.current_slots){
                                 taken = " (no spots left)";
                             }
+                            if(booking.event_host == "SPGU"){
+                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.35)";
+                            } else if(booking.event_host == "PGA"){
+                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.35)";
+                            } else if(booking.event_host == "Overseas"){
+                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.4)";
+                            } else if(booking.event_host == "Coaching"){
+                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.4)";
+                            }
                             if(taken == ""){
                                 box.innerHTML += `
                                 <div class="cal-event-head">${booking.title}</div>
@@ -461,6 +470,15 @@ function setCalendar(monthIdx, yearStr, firstCall){
                             let taken = "";
                             if(booking.max_slots == booking.current_slots){
                                 taken = " (no spots left)";
+                            }
+                            if(booking.event_host == "SPGU"){
+                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.35)";
+                            } else if(booking.event_host == "PGA"){
+                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.35)";
+                            } else if(booking.event_host == "Overseas"){
+                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.4)";
+                            } else if(booking.event_host == "Coaching"){
+                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.4)";
                             }
                             if(taken == ""){
                                 box.innerHTML += `

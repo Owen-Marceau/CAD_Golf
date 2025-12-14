@@ -376,12 +376,12 @@ function setCalendar(monthIdx, yearStr, firstCall){
 
             resetBoxes();
             document.querySelectorAll(".cal-box").forEach((box, idx) => {
+                box.style.backgroundColor = "transparent";
                 if(idx >= startIdx && idx < (endIdx + startIdx)){
                     box.querySelector(".cal-box-day").textContent = String(idx - (startIdx - 1));
                     let boxDay = Number(String(idx - (startIdx - 1)));
 
                     if(monthIdx == startPosition && boxDay == todayDate && startYear == currentYear){
-                        console.log(currentYear)
                         makeBoxToday(box);
                         if(firstCall){
                             todayBox = box;
@@ -395,15 +395,14 @@ function setCalendar(monthIdx, yearStr, firstCall){
                             if(booking.max_slots == booking.current_slots){
                                 taken = " (no spots left)";
                             }
-                            box.style.backgroundColor = "transparent";
                             if(booking.event_host == "SPGU"){
-                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.35)";
+                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.55)";
                             } else if(booking.event_host == "PGA"){
-                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.35)";
+                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.55)";
                             } else if(booking.event_host == "Overseas"){
-                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.4)";
+                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.6)";
                             } else if(booking.event_host == "Coaching"){
-                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.4)";
+                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.6)";
                             }
                             if(taken == ""){
                                 box.innerHTML += `
@@ -448,10 +447,10 @@ function setCalendar(monthIdx, yearStr, firstCall){
 
             document.querySelectorAll(".lac-top-mon").forEach(mon => mon.style.display = "none");
             document.querySelectorAll(".lac-box").forEach((box, idx) => {
+                box.style.backgroundColor = "transparent";
                 if(idx >= startIdx && idx < (endIdx + startIdx)){
                     box.querySelector(".lac-box-day").textContent = String(idx - (startIdx - 1));
                     let boxDay = Number(String(idx - (startIdx - 1)));
-                    console.log(document.querySelectorAll(".lac-top-mon"));
                     document.querySelectorAll(".lac-top-mon")[idx].style.display = "flex";
                     let subtractNum = Math.floor(idx / 7) * 7;
                     document.querySelectorAll(".lac-top-mon")[idx].textContent = days[idx - subtractNum];
@@ -473,13 +472,13 @@ function setCalendar(monthIdx, yearStr, firstCall){
                                 taken = " (no spots left)";
                             }
                             if(booking.event_host == "SPGU"){
-                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.35)";
+                                box.style.backgroundColor = "hsla(140, 35%, 90%, 0.55)";
                             } else if(booking.event_host == "PGA"){
-                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.35)";
+                                box.style.backgroundColor = "hsla(210, 40%, 92%, 0.55)";
                             } else if(booking.event_host == "Overseas"){
-                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.4)";
+                                box.style.backgroundColor = "hsla(28, 55%, 92%, 0.6)";
                             } else if(booking.event_host == "Coaching"){
-                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.4)";
+                                box.style.backgroundColor = "hsla(48, 60%, 92%, 0.6)";
                             }
                             if(taken == ""){
                                 box.innerHTML += `
@@ -585,6 +584,7 @@ function resetBoxes(){
     });
 }
 function makeBoxToday(box){
+    box.style.backgroundColor = "#ecfdcc";
     if(box.classList.contains("cal-box")){
         box.classList.add("cal-box-today");
         box.innerHTML += `
@@ -599,6 +599,8 @@ function makeBoxToday(box){
 }
 function resetCal(){
     setCalendar(startPosition, startYear, false);
+    currentMonth = startPosition;
+    currentYear = startYear;
 }
 
 let benIdx = 0;

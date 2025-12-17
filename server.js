@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.cadgolf_PORT || 3000;
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 app.use(express.json());
@@ -10,11 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.PORT,
+    host: process.env.cadgolf_DB_HOST,
+    user: process.env.cadgolf_DB_USER,
+    password: process.env.cadgolf_DB_PASSWORD,
+    database: process.env.cadgolf_DB_NAME,
+    port: process.env.cadgolf_PORT,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -35,11 +35,11 @@ app.use(cors({
 
 /*
 const store = new MySQLStore({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.PORT // 24642 or 3306
+    host: process.env.cadgolf_DB_HOST,
+    user: process.env.cadgolf_DB_USER,
+    password: process.env.cadgolf_DB_PASSWORD,
+    database: process.env.cadgolf_DB_NAME,
+    port: process.env.cadgolf_PORT // 24642 or 3306
 });
 app.use(session({
     store,
@@ -53,7 +53,7 @@ app.use(express.static('docs'));
 
 
 ////////////////////////// REUSABLE FUNCTIONS LOGIC ///////////////////////////
-async function sendEmail(userEmail, text) {
+async function cadgolfSendEmail(userEmail, text) {
     const dataToSend = { reciever: userEmail, text: text, service: 'nextdesign' };
     try {
         const response = await fetch('https://email-sender-lkex.vercel.app/api/send-email', {
@@ -73,9 +73,9 @@ async function sendEmail(userEmail, text) {
         console.error('Error posting data:', error);
     }
 }
-function sendClientNotification(event, name, players, email){
-    sendEmail(process.env.ADMIN_EMAIL, `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`);
-    sendEmail("jackbaileywoods@gmail.com", `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`);
+function cadgolfSendClientNotification(event, name, players, email){
+    cadgolfSendEmail(process.env.cadgolf_ADMIN_EMAIL, `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`);
+    cadgolfSendEmail("jackbaileywoods@gmail.com", `<p>Hi, a new booking was made from your website by ${name}.<br><br>Event: ${event}<br><br>Players: ${players.replace(/,,/g, ", ")}<br><br> Email: ${email}`);
 }
 function isValidEmail(email){
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -115,7 +115,7 @@ app.post("/api/submit", (req, res) => {
                     }
 
 
-                    sendClientNotification(event.title, name, team, email);
+                    cadgolfSendClientNotification(event.title, name, team, email);
                     return res.json({ message: "Success" });
                 });
             });

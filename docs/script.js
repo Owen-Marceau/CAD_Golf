@@ -1,7 +1,7 @@
 let menuOpen = false;
 let playerDropActive = false;
 
-let url = "https://cad-golf-474x.onrender.com"; // 
+let url = "https://server.nextdesignwebsite.com/cadgolf"; // https://server.nextdesignwebsite.com/cadgolf
 let todayBox;
 let currentEvent;
 const months = [

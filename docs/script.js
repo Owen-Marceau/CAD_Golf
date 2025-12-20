@@ -178,6 +178,22 @@ document.querySelectorAll(".scroll-target").forEach(target => {
     observer.observe(target);
 });
 
+const yrsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.getElementById("yrsModal").style.opacity = "1";
+        document.getElementById("yrsModal").style.pointerEvents = "auto";
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+});
+document.querySelectorAll(".yrs-target").forEach(target => {
+    yrsObserver.observe(target);
+});
+
 function openInfoModal(){
     document.querySelector(".info-modal").style.opacity = "1";
     document.querySelector(".info-modal").style.pointerEvents = "auto";
@@ -342,6 +358,17 @@ document.querySelectorAll(".para-long-btn").forEach(btn => {
             });
         }
     });
+});
+
+document.getElementById("yrsModal").addEventListener("click", (e) => {
+    if(!document.querySelector(".yrs-wrapper").contains(e.target)){
+        document.getElementById("yrsModal").style.opacity = "0";
+        document.getElementById("yrsModal").style.pointerEvents = "none";
+    }
+});
+document.querySelector("i.yrs-xmark").addEventListener("click", () => {
+    document.getElementById("yrsModal").style.opacity = "0";
+    document.getElementById("yrsModal").style.pointerEvents = "none";
 });
 
 

@@ -924,13 +924,23 @@ body {
     position: relative;
 }
 .yrs-wrapper {
+    background: radial-gradient(
+    70% 55% at 20% 85%,
+    rgba(21, 93, 156, 0.55) 0%,
+    rgba(21, 93, 156, 0.0) 100%
+  ),
+  radial-gradient(
+    40% 40% at 80% 20%,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.0) 100%
+  ),
+  hsl(209, 69%, 9%);
+
     text-align: center;
-    background-color: hsl(0, 0%, 9%);
-    border: 1px solid hsl(0, 0%, 15%);
     border-radius: 8px;
-    padding: 46px 24px 28px;
+    padding: 62px 24px 58px;
+    width: 800px;
     max-width: calc(100% - 30px);
-    width: 430px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -942,8 +952,39 @@ i.yrs-xmark {
     top: 15px;
     right: 15px;
     font-size: 15px;
-    color: white;
+    color: hsl(0, 0%, 100%);
     cursor: pointer;
+}
+.yrs-title {
+    line-height: 1;
+    font-size: 42px;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+}
+.yrs-para {
+    margin-top: 18px;
+    font-size: 17px;
+    font-weight: 300;
+    color: hsl(0, 0%, 100%);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+.yrs-btn {
+    margin-top: 42px;
+    text-align: center;
+    cursor: pointer;
+    align-self: center;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: white;
+    color: hsl(0, 0%, 20%);
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+.yrs-btn-plan {
+    background-color: hsla(0, 0%, 45%, 0.35);
+    color: hsl(0, 0%, 100%);
 }
 i.book-modal-check {
     position: absolute;
@@ -1148,8 +1189,8 @@ i.book-modal-check {
 .phil-content {
     flex-shrink: 0;
     position: relative;
-    z-index: 3;
     text-align: left;
+    z-index: 3;
     width: 600px;
 }
 .serv-head {
@@ -3519,8 +3560,21 @@ span.review-star-txt {
     .phil-slider {
         mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 1%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 65%, rgba(255, 255, 255, 0) 99%);
     }
+    .phil-content {
+        text-align: center;
+    }
+    .phil-btn-flex {
+        justify-content: center;
+    }
 }
 @media only screen and (max-width: 550px){
+    .yrs-title {
+        font-size: 28px;
+    }
+    .yrs-para {
+        font-size: 15px;
+    }
+
     .header-logo {
         height: 40px;
     }

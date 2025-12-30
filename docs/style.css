@@ -924,17 +924,20 @@ body {
     position: relative;
 }
 .yrs-wrapper {
-    background: radial-gradient(
-    70% 55% at 20% 85%,
-    rgba(21, 93, 156, 0.55) 0%,
-    rgba(21, 93, 156, 0.0) 100%
-  ),
-  radial-gradient(
-    40% 40% at 80% 20%,
-    rgba(255, 255, 255, 0.07) 0%,
-    rgba(255, 255, 255, 0.0) 100%
-  ),
-  hsl(209, 69%, 9%);
+background: 
+    radial-gradient(
+        70% 55% at 20% 85%,
+        rgba(21, 120, 200, 0.85) 0%, 
+        rgba(21, 93, 156, 0.0) 100%
+    ),
+    radial-gradient(
+        40% 40% at 80% 20%,
+        rgba(90, 200, 250, 0.15) 0%, /* cool blue highlight instead of warm */
+        rgba(255, 255, 255, 0.0) 100%
+    ),
+    hsl(209, 70%, 5%); /* slightly lighter and more vivid dark blue base */
+box-shadow: 0 0 20px rgba(220, 20, 60, 0.7), 0 0 40px rgba(220, 20, 60, 0.5);
+border: 2px solid #dc143c; /* Crimson red: deeper and more striking */
 
     text-align: center;
     border-radius: 8px;
@@ -957,17 +960,26 @@ i.yrs-xmark {
 }
 .yrs-title {
     line-height: 1;
-    font-size: 42px;
-    font-weight: 600;
-    color: hsl(0, 0%, 100%);
+    text-transform: uppercase; /* gives authority and urgency */
+    letter-spacing: 1px; /* makes it feel more deliberate */
+    font-size: 50px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(90deg, white, white); /* cool blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.99), 0 0 25px rgba(0, 115, 255, 0.6);
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite alternate;
 }
 .yrs-para {
     margin-top: 18px;
     font-size: 17px;
-    font-weight: 300;
-    color: hsl(0, 0%, 100%);
-    opacity: 0.9;
+    font-weight: 400; /* slightly stronger for readability */
+    color: #ffffff;
+    opacity: 0.95; /* more solid for attention */
     line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* subtle lift from background */
 }
 .yrs-btn {
     margin-top: 42px;

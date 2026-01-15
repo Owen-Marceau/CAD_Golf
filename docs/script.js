@@ -514,7 +514,6 @@ function mobcheckSlots(day){
             if(booking.max_slots == booking.current_slots) cta = '<div class="book-slot-time" style="pointer-events: none;">(No Spots Left)</div>';
             newSlot.innerHTML = `
                 <div class="book-slot-head">${booking.title}</div>
-                <div class="book-slot-time">${booking.event_time}</div>
                 ${cta}
             `;
             document.querySelector(".book-slot-ul").appendChild(newSlot);

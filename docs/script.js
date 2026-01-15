@@ -507,9 +507,11 @@ function mobtotalDays(monthIdx, yearStr) {
 function mobcheckSlots(day){
     document.querySelector(".book-slot-ul").innerHTML = "";
     console.log(mobbookings);
+    let realDay = day;
+    if(realDay.length == 1) realDay = "0" + realDay;
     mobbookings.forEach(booking => {
-        console.log(day.padStart(2, "0").replace(" ", ""), booking.event_date.split("-")[2]);
-        if(booking.event_date.split("-")[2] == day.padStart(2, "0").replace(" ", "")){
+        console.log(realDay.replace(" ", ""), booking.event_date.split("-")[2]);
+        if(booking.event_date.split("-")[2] == realDay.replace(" ", "")){
             console.log(booking);
             let newSlot = document.createElement("div");
             newSlot.classList.add("book-slot");

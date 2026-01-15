@@ -516,6 +516,7 @@ i.book-cal-chevron {
     margin-bottom: 8px;
 }
 .book-cal-box {
+    position: relative;
     cursor: pointer;
     font-size: 18px;
     height: 70px;
@@ -528,6 +529,15 @@ i.book-cal-chevron {
     border: 1px solid transparent;
     color: hsl(0, 0%, 20%);
     transition: 0.2s ease;
+}
+.book-cal-box span {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 200px;
+    background-color: red;
 }
 .book-cal-box:hover {
     border: 1px solid hsl(0, 0%, 15%);

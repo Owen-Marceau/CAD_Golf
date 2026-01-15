@@ -416,7 +416,7 @@ function mobsetCalendar(monthIdx, yearStr, firstCall){
 
                 if(idx >= startIdx && idx < (endIdx + startIdx)){
                     box.classList.remove("book-cal-inactive");
-                    box.textContent = String(idx - (startIdx - 1));
+                    box.innerHTML = String(idx - (startIdx - 1));
 
                     if(yearStr == startYear && monthIdx == startPosition && Number(box.textContent) < todayDate){
                         box.classList.add("book-cal-disabled");
@@ -439,6 +439,9 @@ function mobsetCalendar(monthIdx, yearStr, firstCall){
                     mobbookings.forEach(booking => {
                         if(Number(booking.event_date.slice(8, 10)) == Number(box.textContent)){
                             todayBookings++;
+                            if(!box.classList.contains("book-cal-disabled")){
+                                box.innerHTML = box.innerHTML + " <span></span>";
+                            }
                         }
                     });
                     if(todayBookings == 35){

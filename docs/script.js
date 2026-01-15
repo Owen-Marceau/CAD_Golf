@@ -509,7 +509,7 @@ function mobcheckSlots(day){
     console.log(mobbookings);
     let realDay = day;
     if(realDay.length == 1) realDay = "0" + realDay;
-    mobbookings.forEach(booking => {
+    mobbookings.forEach(booking => { //w
         console.log(realDay.replace(" ", ""), booking.event_date.split("-")[2]);
         if(Number(booking.event_date.split("-")[2]) == Number(realDay.replace(" ", ""))){
             console.log(booking);

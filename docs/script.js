@@ -1,7 +1,12 @@
+
+
 let menuOpen = false;
 let playerDropActive = false;
 
 let url = "https://servers.nextdesignwebsite.com/cadgolf"; // https://server.nextdesignwebsite.com/cadgolf
+if(window.location.href.includes("localhost")){
+    url = "";
+}
 let todayBox;
 let currentEvent;
 const months = [
@@ -373,6 +378,178 @@ document.querySelector("i.yrs-xmark").addEventListener("click", () => {
 
 
 
+let mobbookings = [];
+function mobsetCalendar(monthIdx, yearStr, firstCall){
+    console.log(monthIdx);
+    document.querySelector(".book-cal-head").textContent = months[monthIdx] + " " + yearStr;
+
+    let startIdx = mobfirstDay(monthIdx, yearStr);
+    let endIdx = mobtotalDays(monthIdx, yearStr);
+    
+    async function getBookings(){
+        const dataToSend = { month: monthIdx + 1, year: yearStr, month2: false, year2: false };
+        try {
+            const response = await fetch(url + '/api/get-events', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataToSend), 
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData.message);
+                return;
+            }
+
+            const responseData = await response.json();
+            mobbookings = responseData.bookings;
+            let dayTxt;
+
+            document.querySelectorAll(".book-cal-box").forEach((box, idx) => {
+                box.classList.remove("book-cal-active");
+                box.classList.remove("book-cal-disabled");
+                box.classList.add("book-cal-inactive");
+                box.textContent = "";
+
+                if(idx >= startIdx && idx < (endIdx + startIdx)){
+                    box.classList.remove("book-cal-inactive");
+                    box.textContent = String(idx - (startIdx - 1));
+
+                    if(yearStr == startYear && monthIdx == startPosition && Number(box.textContent) < todayDate){
+                        box.classList.add("book-cal-disabled");
+                    } else if(yearStr == startYear && monthIdx == startPosition && Number(box.textContent) == todayDate){
+                        box.classList.add("book-cal-active");
+                        dayTxt = box.textContent;
+                        box.classList.remove("book-cal-inactive");
+                        if(firstCall){
+                            todayBox = box;
+                        }
+                    } else if(yearStr == startYear && monthIdx == startPosition && Number(box.textContent) > todayDate){
+                        box.classList.remove("book-cal-inactive");
+                    } else if((monthIdx != startPosition || yearStr != startYear) && Number(box.textContent) == 1){
+                        dayTxt = box.textContent;
+                        box.classList.add("book-cal-active");
+                        box.classList.remove("book-cal-inactive");
+                    }
+
+                    let todayBookings = 0;
+                    mobbookings.forEach(booking => {
+                        if(Number(booking.event_date.slice(8, 10)) == Number(box.textContent)){
+                            todayBookings++;
+                        }
+                    });
+                    if(todayBookings == 35){
+                        box.classList.add("book-cal-disabled");
+
+                        if(Number(box.textContent) >= todayDate || monthIdx != startPosition){
+                            box.style.pointerEvents = "auto";
+                        }
+                    }
+                }
+            });
+
+            mobcheckSlots(dayTxt);
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+    }
+    getBookings();
+}
+if(document.querySelector(".book-cal")){
+    mobsetCalendar(currentMonth, currentYear, true);
+    console.log(currentMonth, currentYear);
+}
+function mobchangeMonth(direction){
+    if(direction == "right"){
+        currentMonth++;
+    } else if(currentMonth > startPosition || Number(currentYear) > Number(startYear)){
+        currentMonth--;
+    }
+
+    if(currentMonth == 12){
+        currentMonth = 0;
+        currentYear = Number(currentYear) + 1;
+    } else if(currentMonth < 0) {
+        currentMonth = 11;
+        currentYear = Number(currentYear) - 1;
+    }
+    mobsetCalendar(currentMonth, currentYear, false);
+}
+document.querySelectorAll(".book-cal-box").forEach(box => {
+    box.addEventListener("click", () => {
+        document.querySelectorAll(".book-cal-box").forEach(other => {
+            other.classList.remove("book-cal-active");
+        });
+        box.classList.add("book-cal-active");
+
+        mobcheckSlots(box.textContent);
+    });
+});
+function mobfirstDay(monthIdx, yearStr) {
+    const date = new Date(parseInt(yearStr), monthIdx, 1);
+    let day = date.getDay() - 1;
+    if(day == -1){
+        return 6;
+    } else {
+        return day;
+    }
+}
+function mobtotalDays(monthIdx, yearStr) {
+    const year = parseInt(yearStr);
+    return new Date(year, monthIdx + 1, 0).getDate(); // last day of previous month
+}
+function mobcheckSlots(day){
+    document.querySelector(".book-slot-ul").innerHTML = "";
+    mobbookings.forEach(booking => {
+        if(booking.event_date.split("-")[2] == day.padStart(2, "0")){
+            let newSlot = document.createElement("div");
+            newSlot.classList.add("book-slot");
+            let cta = '<div class="book-slot-cta">BOOK NOW</div>';
+            if(booking.max_slots == booking.current_slots) cta = '<div class="book-slot-time" style="pointer-events: none;">(No Spots Left)</div>';
+            newSlot.innerHTML = `
+                <div class="book-slot-head">${booking.title}</div>
+                <div class="book-slot-time">${booking.event_time}</div>
+                ${cta}
+            `;
+            document.querySelector(".book-slot-ul").appendChild(newSlot);
+
+            if(booking.event_host == "SPGU"){
+                newSlot.style.backgroundColor = "hsla(140, 35%, 90%, 0.55)";
+            } else if(booking.event_host == "PGA"){
+                newSlot.style.backgroundColor = "hsla(210, 40%, 92%, 0.55)";
+            } else if(booking.event_host == "Overseas"){
+                newSlot.style.backgroundColor = "hsla(28, 55%, 92%, 0.6)";
+            } else if(booking.event_host == "Coaching"){
+                newSlot.style.backgroundColor = "hsla(48, 60%, 92%, 0.6)";
+            }
+
+            newSlot.querySelector(".book-slot-cta")?.addEventListener("click", () => {
+                if(booking.team_size == "2"){
+                    document.querySelector(".reg-player3").style.display = "none";
+                    document.querySelector(".reg-player3").removeAttribute('required');
+                } else {
+                    document.querySelector(".reg-player3").style.display = "flex";
+                    document.querySelector(".reg-player3").setAttribute('required', '');
+                }
+                openInfoModal();
+                document.querySelectorAll(".info-txt")[0].textContent = booking.title;
+                document.querySelectorAll(".info-txt")[1].textContent = booking.event_date.replace(/-/g, "/");
+                document.querySelectorAll(".info-txt")[2].textContent = booking.latest_entry?.replace(/-/g, "/");
+                document.querySelectorAll(".info-txt")[3].textContent = booking.location;
+                document.querySelectorAll(".info-txt")[4].textContent = booking.cost;
+                document.querySelectorAll(".info-txt")[5].textContent = booking.team_size;
+                document.querySelectorAll(".info-txt")[6].textContent = booking.event_description;
+                document.getElementById("event").value = JSON.stringify(booking);
+                document.querySelector("div.btn-info-cta").classList.remove("btn-inactive");
+            });
+        }
+    });
+}
+
+
 function setCalendar(monthIdx, yearStr, firstCall){
     document.querySelector(".cal-nav-title").textContent = months[monthIdx] + " " + yearStr;
     document.querySelector(".lac-nav-title").textContent = months[monthIdx] + " " + yearStr;
@@ -592,6 +769,7 @@ function totalDays(monthIdx, yearStr) {
     return new Date(year, monthIdx + 1, 0).getDate();
 }
 
+
 function resetBoxes(){
     document.querySelectorAll(".cal-box").forEach(box => {
         box.classList.remove("cal-box-event");
@@ -629,6 +807,7 @@ function resetCal(){
     currentMonth = startPosition;
     currentYear = startYear;
 }
+
 
 let benIdx = 0;
 setInterval(() => {

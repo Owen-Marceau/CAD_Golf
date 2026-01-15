@@ -467,6 +467,127 @@ body {
     padding: 10px 22px;
     transition: 0.2s ease;
 }
+
+.book-cal {
+    margin: 0 auto;
+    width: calc(100% - 20px);    
+}
+.book-cal-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+i.book-cal-chevron {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid hsl(0, 0%, 88%);
+    color: hsl(0, 0%, 20%);
+    font-size: 13px;
+}
+.book-cal-head {
+    user-select: none;
+    line-height: 1;
+    font-size: 26px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.book-cal-top {
+    margin: 40px 0 25px;
+    width: 100%;
+    display: flex;
+}
+.book-cal-month {
+    width: 100%;
+    line-height: 1;
+    font-size: 18px;
+    color: hsl(0, 0%, 40%);
+    text-align: center;
+}
+.book-cal-flex {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.book-cal-box {
+    cursor: pointer;
+    font-size: 18px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid transparent;
+    color: hsl(0, 0%, 20%);
+    transition: 0.2s ease;
+}
+.book-cal-box:hover {
+    border: 1px solid hsl(0, 0%, 15%);
+}
+.book-cal-inactive {
+    opacity: 0;
+    pointer-events: none;
+}
+.book-cal-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+.book-cal-active {
+    border: 1px solid transparent !important;
+    background-color: var(--blue-dark);
+    color: white;
+}
+
+.book-slot-ul {
+    margin: 0 auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.book-slot {
+    padding: 16px;
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.2);
+    position: relative;
+}
+.book-slot-head {
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.book-slot-time {
+    line-height: 1.3;
+    margin-top: 8px;
+    font-size: 15px;
+    color: hsl(0, 0%, 40%);
+}
+.book-slot-cta {
+    cursor: pointer;
+    color: var(--blue-dark);
+    line-height: 1;
+    margin-top: 8px;
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: 0.2s ease;
+}
 /*////////////////////////////////////////////////////////////////*/
 
 /*////////////////////// INFO MODAL SECTION ////////////////////////*/
@@ -2642,7 +2763,7 @@ span.review-star-txt {
 
 
 
-.header-burger, .menu-container, .lac-container {
+.header-burger, .menu-container, .lac-container, .book-cal {
     display: none;
 }
 
@@ -3039,8 +3160,10 @@ span.review-star-txt {
     .cal-para {
         margin-top: 20px;
     }
-    .lac-container {
+    .book-cal {
         display: block;
+    }
+    .lac-container {
         width: 1500px;
         max-width: calc(100% - 80px);
         margin: 0 auto;
@@ -3577,6 +3700,25 @@ span.review-star-txt {
     }
     .phil-btn-flex {
         justify-content: center;
+    }
+
+    .book-cal-head {
+        font-size: 22px;
+    }
+    .book-cal-flex {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+    .book-cal-box {
+        height: 50px;
+        font-size: 15px;
+    }
+    .book-cal-month {
+        font-size: 14px;
+    }
+    .book-ul {
+    }
+    .book-li, .book-time-wrapper, i.book-cal-chevron {
     }
 }
 @media only screen and (max-width: 550px){

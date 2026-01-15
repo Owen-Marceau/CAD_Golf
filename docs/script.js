@@ -507,7 +507,7 @@ function mobtotalDays(monthIdx, yearStr) {
 function mobcheckSlots(day){
     document.querySelector(".book-slot-ul").innerHTML = "";
     mobbookings.forEach(booking => {
-        console.log(day.padStart(2, "0"), booking.event_date.split("-")[2]);
+        console.log(day.padStart(2, "0").replace(" ", ""), booking.event_date.split("-")[2]);
         if(booking.event_date.split("-")[2] == day.padStart(2, "0")){
             console.log(booking);
             let newSlot = document.createElement("div");

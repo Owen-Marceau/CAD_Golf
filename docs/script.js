@@ -509,6 +509,7 @@ function mobcheckSlots(day){
     console.log(mobbookings);
     let realDay = day;
     if(realDay.length == 1) realDay = "0" + realDay;
+    let slotMade = false;
     mobbookings.forEach(booking => { //w
         console.log(realDay.replace(" ", ""), booking.event_date.split("-")[2]);
         if(Number(booking.event_date.split("-")[2]) == Number(realDay.replace(" ", ""))){
@@ -521,6 +522,7 @@ function mobcheckSlots(day){
                 <div class="book-slot-head">${booking.title}</div>
                 ${cta}
             `;
+            slotMade = true;
             document.querySelector(".book-slot-ul").appendChild(newSlot);
 
             if(booking.event_host == "SPGU"){
@@ -554,6 +556,9 @@ function mobcheckSlots(day){
             });
         }
     });
+    if(!slotMade){
+        document.querySelector(".book-slot-ul").innerHTML = "There are no events for this day.";
+    }
 }
 
 

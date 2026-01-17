@@ -27,10 +27,10 @@ function createHtml(){
     let menu = document.createElement("div");
     menu.classList.add("menu-container");
     menu.innerHTML = `
-        <a href="index.html"><div class="menu-section menu-dark">Home</div></a>
+        <a href="/"><div class="menu-section menu-dark">Home</div></a>
         <a href="about.html"><div class="menu-section menu-dark">About Me</div></a>
         <a href="lessons-and-fittings.html"><div class="menu-section">Golf Lessons</div></a>
-        <a href="index.html#events"><div class="menu-section menu-dark">View Events</div></a>
+        <a href="/#events"><div class="menu-section menu-dark">View Events</div></a>
         <a href="gallery.html"><div class="menu-section">Gallery</div></a>
     `
 
@@ -38,15 +38,15 @@ function createHtml(){
     header.classList.add("header");
     header.innerHTML = `
         <div class="header-flex">
-            <a href="index.html">
+            <a href="/">
                 <img src="images/logo.png" class="header-logo" />
             </a>
 
             <div class="header-nav">
-                <a href="index.html" class="header-link">Home</a>
+                <a href="/" class="header-link">Home</a>
                 <a href="about.html" class="header-link">About Me</a>
                 <a href="lessons-and-fittings.html" class="header-link">Golf Lessons</a>
-                <a href="index.html#events" class="header-link">View events</a>
+                <a href="/#events" class="header-link">View events</a>
                 <a href="gallery.html" class="header-link">Gallery</a>
             </div>
 
@@ -90,8 +90,8 @@ function createHtml(){
                         <div class="foot-label">Navigation</div>
                         <a href="about-us.html" class="foot-link">About Me</a>
                         <a href="about.html" class="foot-link">Gallery</a>
-                        <a href="index.html#events" class="foot-link">Book event</a>
-                        <a href="index.html#contact" class="foot-link">Contact Me</a>
+                        <a href="/#events" class="foot-link">Book event</a>
+                        <a href="/#contact" class="foot-link">Contact Me</a>
                     </div>
                     <div class="foot-ul">
                         <div class="foot-label">Get in Touch</div>

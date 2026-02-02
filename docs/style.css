@@ -1054,6 +1054,16 @@ i.book-cal-chevron {
     justify-content: flex-end;
     position: relative;
 }
+.yrs-img {
+    position: relative;
+    max-width: calc(100% - 40px);
+    width: 450px;
+    height: auto;
+}
+.yrs-img img {
+    width: 100%;
+    height: auto;
+}
 .yrs-wrapper {
 background: 
     radial-gradient(
@@ -1083,9 +1093,9 @@ border: 2px solid #dc143c; /* Crimson red: deeper and more striking */
 }
 i.yrs-xmark {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 15px;
+    top: -20px;
+    right: 0px;
+    font-size: 18px;
     color: hsl(0, 0%, 100%);
     cursor: pointer;
 }

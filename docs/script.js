@@ -366,10 +366,10 @@ document.querySelectorAll(".para-long-btn").forEach(btn => {
 });
 
 document.getElementById("yrsModal").addEventListener("click", (e) => {
-    if(!document.querySelector(".yrs-wrapper").contains(e.target)){
+    //if(!document.querySelector(".yrs-wrapper").contains(e.target)){
         document.getElementById("yrsModal").style.opacity = "0";
         document.getElementById("yrsModal").style.pointerEvents = "none";
-    }
+    //}
 });
 document.querySelector("i.yrs-xmark").addEventListener("click", () => {
     document.getElementById("yrsModal").style.opacity = "0";

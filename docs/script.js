@@ -256,6 +256,13 @@ if(document.querySelector("form")){
     
             const form = e.target;
             const formData = new FormData(form);
+            const obj = {};
+            for (const [key, value] of formData.entries()) {
+            obj[key] = value;
+            }
+            const longString = JSON.stringify(obj);
+
+            saveEmail(longString);
     
             const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -272,6 +279,30 @@ if(document.querySelector("form")){
             form.reset(); // Optional: reset form fields
         });
     });
+}
+async function saveEmail(longString){
+    const dataToSend = { string: longString };
+    try {
+        const response = await fetch(url + `/api/save-email`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
 }
 
 if(document.querySelector(".info-form")){
